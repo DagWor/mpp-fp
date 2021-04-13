@@ -6,6 +6,7 @@ public  abstract class Account {
 
     private  int accountNumber;
     private double currentBalance;
+    private Customer customer;
     private List<Transactions> transactionList;
 
     public Account(int accountNumber, double currentBalance) {
@@ -21,8 +22,16 @@ public  abstract class Account {
         return currentBalance;
     }
 
+    public Customer getCustomer() {
+        return customer;
+    }
+
     public void setAccountNumber(int accountNumber) {
         this.accountNumber = accountNumber;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 
     public void setCurrentBalance(double currentBalance) {
