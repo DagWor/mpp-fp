@@ -56,7 +56,7 @@ public class Branch {
     }
 
 //    Top k highest withdraw month for the given year
-    public static Date toKWithdrawOfTheYear(){
+    public static Date topKWithdrawOfTheYear(){
 //        to be implemented
         return new Date();
     }
