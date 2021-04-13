@@ -28,9 +28,35 @@ public class Customer extends User {
         return super.getUsername();
     }
 
+    @Override
+    public void setEmail(String email) {
+        super.setEmail(email);
+    }
+
+    @Override
+    public void setFirstname(String firstname) {
+        super.setFirstname(firstname);
+    }
+
+    @Override
+    public void setUsername(String username) {
+        super.setUsername(username);
+    }
+
+    @Override
+    public void setLastName(String lastName) {
+        super.setLastName(lastName);
+    }
 
 
-//   git
+    public List<Account> getAccountList() {
+        return accountList;
+    }
+
+    public void setAccountList(List<Account> accountList) {
+        this.accountList = accountList;
+    }
+    //   git
 
     public  void fundTransfer(){
 
