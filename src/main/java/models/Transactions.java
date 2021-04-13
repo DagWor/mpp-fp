@@ -10,14 +10,18 @@ public class Transactions {
     private int toAccount;
     private double amount;
     private LocalDate date;
+    private Teller teller;
 
     public Transactions(int transactionId, String transactionType, int fromAccount, int toAccount, double amount, LocalDate date) {
-        this.transactionId = transactionId;
         this.transactionType = transactionType;
         this.fromAccount = fromAccount;
         this.toAccount = toAccount;
         this.amount = amount;
         this.date = date;
+    }
+
+    public Teller getTeller() {
+        return teller;
     }
 
     public int getTransactionId() {
@@ -47,6 +51,10 @@ public class Transactions {
 
     public void setTransactionId(int transactionId) {
         this.transactionId = transactionId;
+    }
+
+    public void setTeller(Teller teller) {
+        this.teller = teller;
     }
 
     public void setTransactionType(String transactionType) {
