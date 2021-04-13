@@ -1,11 +1,13 @@
 package models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Customer extends User {
  private List<Account> accountList;
     public Customer(String username, String firstname, String lastName, String email) {
         super(username, firstname, lastName, email);
+        accountList=new ArrayList<>();
     }
 
     @Override
@@ -48,6 +50,9 @@ public class Customer extends User {
         super.setLastName(lastName);
     }
 
+    public void setAccount(Account account) {
+        accountList.add(account);
+    }
 
     public List<Account> getAccountList() {
         return accountList;
