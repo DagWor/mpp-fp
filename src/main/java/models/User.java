@@ -5,7 +5,7 @@ private String username;
 private String firstname;
 private String lastName;
 private String email;
-//private Address address;
+private Address address;
 
     public User(String username, String firstname, String lastName, String email) {
         this.username = username;
@@ -44,5 +44,13 @@ private String email;
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
     }
 }
