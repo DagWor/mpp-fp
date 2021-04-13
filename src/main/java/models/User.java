@@ -7,11 +7,13 @@ private String lastName;
 private String email;
 private Address address;
 
-    public User(String username, String firstname, String lastName, String email) {
+    public User(String username, String firstname, String lastName, String email,Address address) {
         this.username = username;
         this.firstname = firstname;
         this.lastName = lastName;
         this.email = email;
+        this.address=address;
+
     }
 
     public String getUsername() {
