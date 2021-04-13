@@ -1,5 +1,6 @@
 package models;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -13,7 +14,7 @@ public class Branch {
         this.branchName = branchName;
         this.openedDate = openedDate;
         this.address = address;
-        this.users = users;
+        this.users = new ArrayList<>();
     }
 
     public String getBranchName() {
@@ -69,5 +70,15 @@ public class Branch {
     public static  List<Account> topKWithdrawAccount(){
         //to be implemented
         return null;
+    }
+
+    @Override
+    public String toString() {
+        return "Branch{" +
+                "branchName='" + branchName + '\'' +
+                ", openedDate=" + openedDate +
+                ", address=" + address +
+                ", users=" + users +
+                '}';
     }
 }
