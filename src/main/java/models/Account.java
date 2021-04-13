@@ -4,6 +4,7 @@ public  abstract class Account {
 
     private  int accountNumber;
     private double currentBalance;
+    //private List<Transaction> transactionList;
 
     public Account(int accountNumber, double currentBalance) {
         this.accountNumber = accountNumber;
