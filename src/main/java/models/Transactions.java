@@ -10,7 +10,4 @@ public class Transactions {
     private int toAccount;
     private double amount;
     private LocalDate date;
-
-
-
 }
