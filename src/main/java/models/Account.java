@@ -1,10 +1,12 @@
 package models;
 
+import java.util.List;
+
 public  abstract class Account {
 
     private  int accountNumber;
     private double currentBalance;
-    //private List<Transaction> transactionList;
+    private List<Transactions> transactionList;
 
     public Account(int accountNumber, double currentBalance) {
         this.accountNumber = accountNumber;
@@ -27,10 +29,15 @@ public  abstract class Account {
         this.currentBalance = currentBalance;
     }
 
+    public List<Transactions> getTransactionList() {
+        return transactionList;
+    }
+
+    public void setTransactionList(List<Transactions> transactionList) {
+        this.transactionList = transactionList;
+    }
+
     //abstract methods
 
     public abstract double getInterest();
-
-
-
 }
