@@ -1,5 +1,6 @@
 package models;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -14,6 +15,7 @@ public class HQ {
         this.bankName = bankName;
         this.establishedDate = establishedDate;
         this.address = address;
+        branch = new ArrayList<>();
     }
 
     public String getBankName() {
@@ -51,7 +53,9 @@ public class HQ {
     public void createBranch(){
         //implementation
     }
-
+    public void addBranch(Branch _branch){
+        branch.add(_branch);
+    }
     public List<Branch> viewBranch(){
         //to be implemented
         return null;
