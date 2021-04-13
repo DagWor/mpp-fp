@@ -9,7 +9,7 @@ public class Branch {
     private Address address;
     private List<User> users;
 
-    public Branch(String branchName, Date openedDate, Address address, List<User> users) {
+    public Branch(String branchName, Date openedDate, Address address) {
         this.branchName = branchName;
         this.openedDate = openedDate;
         this.address = address;
@@ -42,6 +42,10 @@ public class Branch {
 
     public List<User> getUsers() {
         return users;
+    }
+
+    public void addUsers(User user){
+        users.add(user);
     }
 
     public void setUsers(List<User> users) {
