@@ -1,10 +1,9 @@
-package queries;
+package utility;
 
 import models.Account;
 import models.Customer;
 import models.HQ;
 
-import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Stream;
 
