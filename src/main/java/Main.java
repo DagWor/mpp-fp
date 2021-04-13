@@ -1,4 +1,5 @@
 import models.*;
+import queries.AdminUtils;
 
 import java.time.LocalDate;
 import java.time.Month;
@@ -17,9 +18,9 @@ public class Main {
         // BRANCH 1
         Branch branch = new Branch("First", new Date(), address);
 
-        User admin = new Admin(1000, "admin", "xyz@gmail.com", "John", "Doe");
-        User teller = new Teller(1000, "teller", "teller@gmail.com", "Alice", "Doe");
-        User customer = new Customer("customer", "customer@gmail.com", "Susan", "Doe");
+        User admin = new Admin(1000, "admin", "xyz@gmail.com", "John", "Doe", address);
+        User teller = new Teller(1000, "teller", "teller@gmail.com", "Alice", "Doe", address);
+        User customer = new Customer("customer", "customer@gmail.com", "Susan", "Doe", address);
 
         branch.setUsers(Arrays.asList(admin, customer, teller));
 
@@ -29,10 +30,13 @@ public class Main {
 
         Account account1 = new CheckingAccount(321, 2541.2, 7.5);
         Customer customer2 = (Customer) customer;
+        account.setCustomer(customer2);
+        account1.setCustomer(customer2);
         customer2.setAccountList(Arrays.asList(account, account1));
 
 
         account.setTransactionList(Arrays.asList(transactions, transactions1));
+        account1.setTransactionList(Arrays.asList(transactions));
 
 
 
@@ -41,9 +45,9 @@ public class Main {
 
         Branch branch1 = new Branch("Second", new Date(), address);
 
-        User admin1 = new Admin(1000, "admin1", "xyz1@gmail.com", "Dave", "George");
-        User customer1 = new Customer("customer1", "Lily", "Hugh", "customer1@gmail.com");
-        User teller1 = new Teller(1000, "teller1", "teller1@gmail.com", "Carl", "Junior");
+        User admin1 = new Admin(1000, "admin1", "xyz1@gmail.com", "Dave", "George", address);
+        User customer1 = new Customer("customer1", "Lily", "Hugh", "customer1@gmail.com", address);
+        User teller1 = new Teller(1000, "teller1", "teller1@gmail.com", "Carl", "Junior", address);
 
         branch1.setUsers(Arrays.asList(admin1, customer1, teller1));
 
@@ -55,15 +59,20 @@ public class Main {
 
         Account account3 = new CheckingAccount(321, 2541.2, 7.5);
         Customer customer3 = (Customer) customer1;
+        account3.setCustomer(customer3);
+        account2.setCustomer(customer3);
         customer3.setAccountList(Arrays.asList(account3, account2));
 
 
-        account.setTransactionList(Arrays.asList(transactions2, transactions3));
+        account2.setTransactionList(Arrays.asList(transactions2, transactions3));
+        account3.setTransactionList(Arrays.asList(transactions3));
 
 
         hq.setBranch(Arrays.asList(branch, branch1));
 
-        System.out.println(hq);
+        Customer c = AdminUtils.mostActiveCustomer.apply(hq);
+        System.out.println(c);
+//        System.out.println(hq);
 
 
     }
