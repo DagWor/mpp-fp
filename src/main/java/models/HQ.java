@@ -60,6 +60,7 @@ public class HQ {
     //The highest deposit for given month
     public static double theHighestDepositOfTheMonth(int month){
         //to be implemented
+
         return 0.0;
     }
     //Find the highest withdraw account for a given month
