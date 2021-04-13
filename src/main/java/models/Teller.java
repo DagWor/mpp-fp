@@ -18,6 +18,7 @@ public class Teller extends User{
     public double calcTotalDeposit(){
 //        to be implemented
         return 0.0;
+
     }
 
 //    public List<Transaction> viewBalance(){}
