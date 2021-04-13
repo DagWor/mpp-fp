@@ -61,11 +61,9 @@ public class HQ {
         return null;
     }
 
-    //The highest deposit for given month
-    public static double theHighestDepositOfTheMonth(int month){
-        //to be implemented
-
-        return 0.0;
+    //The top k deposit of the given year
+    public static List<Transactions> theHighestDepositOfTheMonth(HQ hq, int year, int k){
+        return BankHQUtility.topKDeposit.apply(hq,2020,5);
     }
     //Find the highest withdraw account for a given month
     public static double theHighestWithdrawOfTheMonth(int month){
