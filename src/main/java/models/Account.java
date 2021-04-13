@@ -49,4 +49,9 @@ public  abstract class Account {
     //abstract methods
 
     public abstract double getInterest();
+
+    @Override
+    public String toString() {
+        return "Account Info: " + "Account Number: " + getAccountNumber()+ ", Current Balance: " + getCurrentBalance() ;
+    }
 }
