@@ -12,7 +12,7 @@ public class Transactions {
     private LocalDate date;
     private Teller teller;
 
-    public Transactions(int transactionId, String transactionType, int fromAccount, int toAccount, double amount, LocalDate date) {
+    public Transactions( String transactionType, int fromAccount, int toAccount, double amount, LocalDate date) {
         this.transactionType = transactionType;
         this.fromAccount = fromAccount;
         this.toAccount = toAccount;
