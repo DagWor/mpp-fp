@@ -40,6 +40,7 @@ public class Transactions {
         return toAccount;
     }
 
+
     public double getAmount() {
         return amount;
     }
