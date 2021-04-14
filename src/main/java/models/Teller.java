@@ -1,5 +1,7 @@
 package models;
 
+import java.util.Objects;
+
 public class Teller extends User {
     private final float salary;
 
@@ -76,5 +78,18 @@ public class Teller extends User {
                 "last name =" + getLastName() +
                 "email =" + getEmail() +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Teller teller = (Teller) o;
+        return Float.compare(teller.salary, salary) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(salary);
     }
 }
