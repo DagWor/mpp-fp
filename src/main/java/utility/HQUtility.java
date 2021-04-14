@@ -1,11 +1,7 @@
-package models;
+package utility;
 
-import models.Customer;
-import models.HQ;
-import models.TiFunction;
-import models.Transactions;
+import models.*;
 
-import java.util.Comparator;
 import java.util.List;
 import java.util.function.BiFunction;
 import java.util.function.Function;
@@ -16,7 +12,7 @@ public abstract class HQUtility {
     /*
     Function that populates to k deposit for the given year
     */
-    public static TiFunction<HQ,Integer,Integer, List<Transactions>> topKDeposit=(hq, year,k)->
+    public static TriFunction<HQ,Integer,Integer, List<Transactions>> topKDeposit=(hq, year, k)->
             HQUtility.lstOfTransaction.apply(hq).stream()
                     .flatMap(account -> account.getTransactionList().stream())
                     .filter(transactions -> transactions.getDate().getYear()==year && transactions.getTransactionType().equals("DEPOSIT"))
@@ -27,19 +23,11 @@ public abstract class HQUtility {
     /*
     * Top K accounts
     */
-    public static  BiFunction<HQ,Integer,List<Account>> topKAccounts = (hq,k)->
+    public static  BiFunction<HQ,Integer,List<Account>> topKAccounts = (hq, k)->
             HQUtility.lstOfTransaction.apply(hq).stream()
             .sorted((acc1,acc2)-> (int) (acc2.getCurrentBalance() - acc1.getCurrentBalance()))
             .limit(k)
             .collect(Collectors.toList());
-
-
-
-
-
-
-
-
 
     public static Function<HQ,List<Account>> lstOfTransaction=(hq)->
             Stream.of(hq)
@@ -49,5 +37,4 @@ public abstract class HQUtility {
                     .map(user -> (Customer)user)
                     .flatMap(customer -> customer.getAccountList().stream())
                     .collect(Collectors.toList());
-
 }

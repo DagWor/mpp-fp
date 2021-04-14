@@ -1,5 +1,7 @@
 package models;
 
+import utility.HQUtility;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -93,4 +95,13 @@ public class HQ {
         return  null;
     }
 
+    @Override
+    public String toString() {
+        return "HQ{" +
+                "bankName='" + bankName + '\'' +
+                ", branch=" + branch +
+                ", establishedDate=" + establishedDate +
+                ", address=" + address +
+                '}';
+    }
 }

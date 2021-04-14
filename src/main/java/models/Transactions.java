@@ -4,7 +4,6 @@ import java.time.LocalDate;
 
 public class Transactions {
 
-    private  int transactionId;
     private  String transactionType;
     private  int fromAccount;
     private int toAccount;
@@ -24,9 +23,6 @@ public class Transactions {
         return teller;
     }
 
-    public int getTransactionId() {
-        return transactionId;
-    }
 
     public String getTransactionType() {
         return transactionType;
@@ -49,9 +45,7 @@ public class Transactions {
         return date;
     }
 
-    public void setTransactionId(int transactionId) {
-        this.transactionId = transactionId;
-    }
+
 
     public void setTeller(Teller teller) {
         this.teller = teller;
@@ -76,5 +70,12 @@ public class Transactions {
     public void setDate(LocalDate date) {
         this.date = date;
     }
+
+    @Override
+    public String toString() {
+        return "Transaction Info: " + "Transaction Type: " + transactionType + ", amount: " + getAmount() + ", Amount:" + getAmount() +
+                ",From Account:" + getFromAccount() + " ,To Account: " + getToAccount();
+    }
+
 
 }

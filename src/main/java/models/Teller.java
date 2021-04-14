@@ -58,6 +58,12 @@ public class Teller extends User {
 //        customer.addAccount(savingAccount);
     }
 
+
+    public double calcTotalDeposit() {
+//        to be implemented
+        return 0.0;
+    }
+
     public void createCheckingAccount(Customer customer, SavingAccount savingAccount){
         // TODO - add account for customer
 //        customer.addAccount(checkingAccount);

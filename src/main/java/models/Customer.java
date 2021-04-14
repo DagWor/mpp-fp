@@ -68,4 +68,11 @@ public class Customer extends User {
     public  void fundTransfer(){
 
     }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "accountList=" + accountList +
+                "} " + super.toString();
+    }
 }
