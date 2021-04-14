@@ -69,7 +69,7 @@ public class Main {
         hq.setBranch(Arrays.asList(branch, branch1));
 
         Customer c = AdminUtils.mostActiveCustomer.apply(hq);
-        System.out.println(c);
+        System.out.println(c.toString());
 //        System.out.println(hq);
 
 
