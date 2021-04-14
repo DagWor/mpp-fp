@@ -8,8 +8,6 @@ public class Admin extends User {
         this.salary = salary;
     }
 
-
-
     @Override
     public String getEmail() {
         return super.getEmail();
