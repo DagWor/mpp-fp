@@ -45,8 +45,10 @@ public class MainTest {
         assertEquals(expected, actual);
     }
 
+
+    // Test calculateMonthlyBranchDepositWithdrawalDifference
     @Test
-    public void whenBranchGiven_calculateBranchRevenue(){
+    public void whenBranchGiven_calculateMonthlyBranchDepositWithdrawalDifference(){
         Double expected = AdminServices.expectedRevenue_whenBranchGiven_calculateBranchRevenue();
         Double actual = AdminUtils.MonthlyBranchDepositWithdrawalDifference.apply((Branch) AdminServices.prepareData().get(1), 2021, 5);
         assertEquals(expected, actual);
