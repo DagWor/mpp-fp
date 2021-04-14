@@ -35,33 +35,34 @@ public abstract class AdminUtils {
 
 
 
-    public static Function<Branch, Double> branchRevenue = (branch) ->
-            DoubleStream.of(AdminUtils.deposit.apply(branch), AdminUtils.withdrawal.apply(branch))
-                .reduce((a1, a2) -> a1 - a2).orElse(0.0);
+    public static TriFunction<Branch, Integer, Integer, Double> MonthlyBranchDepositWithdrawalDifference = (branch, year, month) ->
+            DoubleStream.of(AdminUtils.deposit.apply(branch, year, month), AdminUtils.withdrawal.apply(branch, year, month))
+                .reduce((a1, a2) -> a2 - a1).orElse(0.0);
 
 
-    public static Function<Branch, Double> withdrawal = branch ->
-            Stream.ofNullable(branch)
-                    .flatMap(branch1 -> Optional.ofNullable(branch1.getUsers()).orElseGet(ArrayList::new).stream())
-                    .filter(user -> user instanceof Customer)
-                    .map(user -> (Customer)user)
-                    .flatMap(customer -> Optional.ofNullable(customer.getAccountList()).orElseGet(ArrayList::new).stream())
-                    .flatMap(account -> Optional.ofNullable(account.getTransactionList()).orElseGet(ArrayList::new).stream())
-                    .filter(transaction1 -> Optional.ofNullable(transaction1.getTransactionType()).orElse("no-").equals("withdrawal"))
+    public static TriFunction<Branch, Integer, Integer, Double> withdrawal = (branch, year, month) ->
+            Optional.ofNullable(AdminUtils.listOfTransactions.apply(branch)).orElseGet(ArrayList::new)
+                    .stream()
+                    .filter(transaction1 -> transaction1.getTransactionType().equals("withdrawal") && transaction1.getDate().getYear()==year && transaction1.getDate().getMonthValue() == month)
                     .map(Transactions::getAmount)
                     .reduce(Double::sum)
                     .orElse(0.0);
 
-    public static Function<Branch, Double> deposit = branch ->
+    public static TriFunction<Branch, Integer, Integer, Double> deposit = (branch, year, month) ->
+                    Optional.ofNullable(AdminUtils.listOfTransactions.apply(branch)).orElseGet(ArrayList::new)
+                            .stream()
+                    .filter(transaction1 -> transaction1.getTransactionType().equals("deposit") && transaction1.getDate().getYear()==year && transaction1.getDate().getMonthValue() == month)
+                    .map(Transactions::getAmount)
+                    .reduce(Double::sum)
+                    .orElse(0.0);
+
+    public static Function<Branch, List<Transactions>> listOfTransactions = (branch) ->
             Stream.ofNullable(branch)
                     .flatMap(branch1 -> Optional.ofNullable(branch1.getUsers()).orElseGet(ArrayList::new).stream())
                     .filter(user -> user instanceof Customer)
                     .map(user -> (Customer)user)
                     .flatMap(customer -> Optional.ofNullable(customer.getAccountList()).orElseGet(ArrayList::new).stream())
                     .flatMap(account -> account.getTransactionList().stream())
-                    .filter(transaction1 -> transaction1.getTransactionType().equals("deposit"))
-                    .map(Transactions::getAmount)
-                    .reduce(Double::sum)
-                    .orElse(0.0);
+                    .collect(Collectors.toList());
 
 }
