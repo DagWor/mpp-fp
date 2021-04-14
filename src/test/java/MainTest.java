@@ -128,6 +128,7 @@ public class MainTest {
         assertEquals(expected, actual);
     }
 
+    //
     @Test
     public void whenBranchGiven_provideHighestPaidTeller() {
 
