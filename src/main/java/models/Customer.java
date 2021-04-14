@@ -2,6 +2,7 @@ package models;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Customer extends User {
  private List<Account> accountList;
@@ -74,5 +75,18 @@ public class Customer extends User {
         return "Customer{" +
                 "accountList=" + accountList +
                 "} " + super.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Customer customer = (Customer) o;
+        return Objects.equals(getEmail(), customer.getEmail());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(accountList);
     }
 }
