@@ -1,5 +1,6 @@
 package models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public  abstract class Account {
@@ -12,6 +13,7 @@ public  abstract class Account {
     public Account(int accountNumber, double currentBalance) {
         this.accountNumber = accountNumber;
         this.currentBalance = currentBalance;
+        transactionList = new ArrayList<>();
     }
 
     public int getAccountNumber() {
