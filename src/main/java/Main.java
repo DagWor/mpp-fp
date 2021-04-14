@@ -3,7 +3,7 @@ import utility.AdminUtils;
 
 import java.time.LocalDate;
 import java.util.Arrays;
-import java.util.Date;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -44,22 +44,22 @@ public class Main {
         Branch branch1 = new Branch("Second", new Date(), address);
 
         User admin1 = new Admin(1000, "admin1", "xyz1@gmail.com", "Dave", "George", address);
-        User customer1 = new Customer("customer1", "Lily", "Hugh", "customer1@gmail.com", address);
-        User teller1 = new Teller(1000, "teller1", "teller1@gmail.com", "Carl", "Junior", address);
+        Customer customer1 = new Customer("customer1", "Lily", "Hugh", "customer1@gmail.com", address);
+        Teller teller1 = new Teller(1000, "teller1", "teller1@gmail.com", "Carl", "Junior", address);
 
         branch1.setUsers(Arrays.asList(admin1, customer1, teller1));
 
 
 
-        Account account2 = new SavingAccount(123, 100, 5.5);
-        Transactions transactions2 = new Transactions("transfer", 123, 321, 30.0, LocalDate.of(2021, 5, 2));
+        Account account2 = new SavingAccount(1234, 1500, 5.5);
+        Transactions transactions2 = new Transactions("transfer", 1234, 321, 30.0, LocalDate.of(2021, 5, 2));
         Transactions transactions3 = new Transactions("deposit", 0, 123, 30.0, LocalDate.of(2021, 5, 2));
 
         Account account3 = new CheckingAccount(321, 2541.2, 7.5);
-        Customer customer3 = (Customer) customer1;
-        account3.setCustomer(customer3);
-        account2.setCustomer(customer3);
-        customer3.setAccountList(Arrays.asList(account3, account2));
+//        Customer customer3 = (Customer) customer1;
+        account3.setCustomer(customer1);
+        account2.setCustomer(customer1);
+        customer1.setAccountList(Arrays.asList(account3, account2));
 
 
         account2.setTransactionList(Arrays.asList(transactions2, transactions3));
@@ -68,8 +68,8 @@ public class Main {
 
         hq.setBranch(Arrays.asList(branch, branch1));
 
-        Customer c = AdminUtils.mostActiveCustomer.apply(hq);
-        System.out.println(c.toString());
+//        List<Customer> c = AdminUtils.mostActiveCustomers.apply(hq, 1);
+//        System.out.println(c.toString());
 //        System.out.println(hq);
 
 
