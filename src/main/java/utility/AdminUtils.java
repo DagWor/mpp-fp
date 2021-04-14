@@ -64,13 +64,4 @@ public abstract class AdminUtils {
                     .reduce(Double::sum)
                     .orElse(0.0);
 
-
-    public static Function<HQ, List<Account>> lstOfAccount = hq ->
-            Stream.of(hq)
-                    .flatMap(_hq -> Optional.ofNullable(_hq.getBranch()).orElseGet(ArrayList::new).stream())
-                    .flatMap(branch -> Optional.ofNullable(branch.getUsers()).orElseGet(ArrayList::new).stream())
-                    .filter(user -> user instanceof Customer)
-                    .map(user -> (Customer) user)
-                    .flatMap(customer -> customer.getAccountList().stream())
-                    .collect(Collectors.toList());
 }
