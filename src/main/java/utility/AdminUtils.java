@@ -13,11 +13,11 @@ import java.util.*;
 public abstract class AdminUtils {
     public static BiFunction<HQ, Integer, List<Customer>> mostActiveCustomers = (hq, k) ->
             Stream.ofNullable(hq)
-                    .flatMap(hq1 -> Optional.ofNullable(hq1.getBranch()).get().stream())
-                    .flatMap(branch -> Optional.ofNullable(branch.getUsers()).get().stream())
+                    .flatMap(hq1 -> Optional.ofNullable(hq1.getBranch()).orElseGet(ArrayList::new).stream())
+                    .flatMap(branch -> Optional.ofNullable(branch.getUsers()).orElseGet(ArrayList::new).stream())
                     .filter(user -> user instanceof Customer)
                     .map(user -> (Customer) user)
-                    .flatMap(customer -> Optional.ofNullable(customer.getAccountList()).get().stream())
+                    .flatMap(customer -> Optional.ofNullable(customer.getAccountList()).orElseGet(ArrayList::new).stream())
                     .sorted((account1, account2) -> account2.getTransactionList().size() - account1.getTransactionList().size())
                     .limit(k)
                     .map(Account::getCustomer)
@@ -26,7 +26,7 @@ public abstract class AdminUtils {
 
     public static BiFunction<Branch, Integer, List<Teller>> highestPaidTellers = (branch, k) ->
             Stream.ofNullable(branch)
-                    .flatMap(branch1 -> Optional.ofNullable(branch1.getUsers()).get().stream())
+                    .flatMap(branch1 -> Optional.ofNullable(branch1.getUsers()).orElseGet(ArrayList::new).stream())
                     .filter(user -> user instanceof Teller)
                     .map(user -> (Teller) user)
                     .sorted((teller, teller1) -> (int)teller1.getSalary() - (int)teller.getSalary() )
@@ -42,7 +42,7 @@ public abstract class AdminUtils {
 
     public static Function<Branch, Double> withdrawal = branch ->
             Stream.ofNullable(branch)
-                    .flatMap(branch1 -> Optional.ofNullable(branch1.getUsers()).get().stream())
+                    .flatMap(branch1 -> Optional.ofNullable(branch1.getUsers()).orElseGet(ArrayList::new).stream())
                     .filter(user -> user instanceof Customer)
                     .map(user -> (Customer)user)
                     .flatMap(customer -> Optional.ofNullable(customer.getAccountList()).orElseGet(ArrayList::new).stream())
@@ -54,10 +54,10 @@ public abstract class AdminUtils {
 
     public static Function<Branch, Double> deposit = branch ->
             Stream.ofNullable(branch)
-                    .flatMap(branch1 -> Optional.ofNullable(branch1.getUsers()).get().stream())
+                    .flatMap(branch1 -> Optional.ofNullable(branch1.getUsers()).orElseGet(ArrayList::new).stream())
                     .filter(user -> user instanceof Customer)
                     .map(user -> (Customer)user)
-                    .flatMap(customer -> Optional.ofNullable(customer.getAccountList()).get().stream())
+                    .flatMap(customer -> Optional.ofNullable(customer.getAccountList()).orElseGet(ArrayList::new).stream())
                     .flatMap(account -> account.getTransactionList().stream())
                     .filter(transaction1 -> transaction1.getTransactionType().equals("deposit"))
                     .map(Transactions::getAmount)
@@ -67,8 +67,8 @@ public abstract class AdminUtils {
 
     public static Function<HQ, List<Account>> lstOfAccount = hq ->
             Stream.of(hq)
-                    .flatMap(_hq -> Optional.ofNullable(_hq.getBranch()).get().stream())
-                    .flatMap(branch -> Optional.ofNullable(branch.getUsers()).get().stream())
+                    .flatMap(_hq -> Optional.ofNullable(_hq.getBranch()).orElseGet(ArrayList::new).stream())
+                    .flatMap(branch -> Optional.ofNullable(branch.getUsers()).orElseGet(ArrayList::new).stream())
                     .filter(user -> user instanceof Customer)
                     .map(user -> (Customer) user)
                     .flatMap(customer -> customer.getAccountList().stream())
