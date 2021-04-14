@@ -23,7 +23,9 @@ public class Main {
 
         Account account = new SavingAccount(123, 100, 5.5);
         Transactions transactions = new Transactions("withdrawal", 123, 0, 160, LocalDate.of(2021, 5, 2));
+        transactions.setTeller((Teller)teller);
         Transactions transactions1 = new Transactions("deposit", 0, 123, 30.0, LocalDate.of(2021, 5, 2));
+        transactions1.setTeller((Teller)teller);
 
         Account account1 = new CheckingAccount(321, 2541.2, 7.5);
         Customer customer2 = (Customer) customer;
@@ -33,7 +35,7 @@ public class Main {
 
 
         account.setTransactionList(Arrays.asList(transactions, transactions1));
-        account1.setTransactionList(Arrays.asList(transactions));
+        account1.setTransactionList(Collections.singletonList(transactions));
 
         branch.setUsers(Arrays.asList(admin, customer, teller));
 
@@ -52,10 +54,12 @@ public class Main {
 
 
         Account account2 = new SavingAccount(1234, 1500, 5.5);
-        Transactions transactions2 = new Transactions("withdrawal", 1234, 321, 30.0, LocalDate.of(2021, 5, 2));
-        Transactions transactions3 = new Transactions("deposit", 0, 123, 150, LocalDate.of(2021, 5, 2));
+        Transactions transactions2 = new Transactions("deposit", 1234, 321, 30.0, LocalDate.of(2021, 5, 2));
+        transactions2.setTeller((Teller)teller1);
+        Transactions transactions3 = new Transactions("withdrawal", 0, 123, 150, LocalDate.of(2021, 5, 2));
+        transactions3.setTeller((Teller)teller1);
 
-        Account account3 = new CheckingAccount(321, 2541.2, 7.5);
+        Account account3 = new CheckingAccount(3212, 2541.2, 7.5);
         Customer customer3 = (Customer) customer1;
         account3.setCustomer(customer3);
         account2.setCustomer(customer3);
@@ -63,7 +67,7 @@ public class Main {
 
 
         account2.setTransactionList(Arrays.asList(transactions2, transactions3));
-        account3.setTransactionList(Arrays.asList(transactions3));
+        account3.setTransactionList(Collections.singletonList(transactions3));
 
 
         hq.setBranch(Arrays.asList(branch, branch1));
@@ -72,14 +76,11 @@ public class Main {
         System.out.println(c.toString());
         System.out.println(hq);
 
-        System.out.println("Total Deposit : $" + AdminUtils.withdrawal.apply(branch));
-        System.out.println("Total Withdrawal : $" + AdminUtils.deposit.apply(branch));
-        System.out.println("Branch Revenue : $" + AdminUtils.branchRevenue.apply(branch));
+        System.out.println("Total withdrawal : $" + AdminUtils.withdrawal.apply(branch, 2021, 5));
+        System.out.println("Total deposit : $" + AdminUtils.deposit.apply(branch, 2021, 5));
+        System.out.println("Branch Revenue : $" + AdminUtils.MonthlyBranchDepositWithdrawalDifference.apply(branch, 2021, 5));
 
 
-        List<Account> l = AdminUtils.lstOfAccount.apply(hq);
-
-        System.out.println(l);
 
 
     }
