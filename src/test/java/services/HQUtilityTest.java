@@ -1,13 +1,13 @@
 package services;
 import models.Address;
 import models.HQ;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import utility.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class HQUtilityTest {
 
