@@ -3,8 +3,6 @@ import org.junit.jupiter.api.Test;
 import services.AdminServices;
 import utility.AdminUtils;
 
-import java.time.LocalDate;
-import java.util.Arrays;
 import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -59,6 +57,13 @@ public class MainTest {
     public void whenBranchGiven_calculateMonthlyBranchDepositWithdrawalDifference(){
         Double expected = AdminServices.expectedRevenue_whenBranchGiven_calculateBranchRevenue();
         Double actual = AdminUtils.MonthlyBranchDepositWithdrawalDifference.apply((Branch) AdminServices.prepareData().get(1), 2021, 5);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void whenNullBranchGiven_calculateMonthlyBranchDepositWithdrawalDifference(){
+        Double expected = 0.0;
+        Double actual = AdminUtils.MonthlyBranchDepositWithdrawalDifference.apply(null, 2021, 5);
         assertEquals(expected, actual);
     }
 }
