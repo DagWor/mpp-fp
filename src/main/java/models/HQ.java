@@ -65,9 +65,9 @@ public class HQ {
     }
 
     //    Top k peek withdraw month (s) of the giver year
-    public static List<String> thePeekWithdrawtopK(HQ hq, int year, int k) {
+    /*public static List<String> thePeekWithdrawtopK(HQ hq, int year, int k) {
         return HQUtility.thePeekMonthWithdrawTopK.apply(hq, year,k);
-    }
+    }*/
     @Override
     public String toString() {
         return "HQ{" +
