@@ -15,11 +15,11 @@ public class AdminServices {
         Address address = new Address("1000", "Fairfield", 52556, 10231, "IA", "USA");
         HQ hq = new HQ(
                 "Don't Trust Bank",
-                new Date(),
+                LocalDate.of(2021, 5, 2),
                 address);
 
         // BRANCH 1
-        Branch branch = new Branch("First", new Date(), address);
+        Branch branch = new Branch("First", LocalDate.of(2021, 5, 2), address);
 
         User admin = new Admin(1000, "admin", "xyz@gmail.com", "John", "Doe", address);
         Teller teller = new Teller(1000, "teller", "teller@gmail.com", "Alice", "Doe", address);
@@ -42,7 +42,7 @@ public class AdminServices {
 
         // Branch 2
 
-        Branch branch1 = new Branch("Second", new Date(), address);
+        Branch branch1 = new Branch("Second", LocalDate.of(2021, 5, 2), address);
 
         User admin1 = new Admin(1000, "admin1", "xyz1@gmail.com", "Dave", "George", address);
         Customer customer1 = new Customer("customer1", "Lily", "Hugh", "customer1@gmail.com", address);
