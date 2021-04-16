@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ec2100e1-1613-4f9f-85da-c67569bcefb5" name="Default Changelist" comment="monthly function issues resolved">
+      <change beforePath="$PROJECT_DIR$/.gradle/6.8/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view />
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1r7XyHc1AWvgIk0dWdgioXiDdjD" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Assignments/mpp-fp" />
+    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.proportion" value="0.1321004" />
+    <property name="project.structure.side.proportion" value="0.31987077" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\dagma\Videos\Education\Mpp\Project\Phase2" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Gradle.MainTest">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;MainTest&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="MainTest.whenBranchGiven_calculateMonthlyBranchDepositWithdrawalDifference" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;MainTest.whenBranchGiven_calculateMonthlyBranchDepositWithdrawalDifference&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="MainTest.whenHQGiven_provideMostActiveCustomer" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;MainTest.whenHQGiven_provideMostActiveCustomer&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="MainTest.whenNullBranchGiven_provideHighestPaidTeller" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;MainTest.whenNullBranchGiven_provideHighestPaidTeller&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="MainTest.whenNullHQGiven_provideMostActiveCustomer" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;MainTest.whenNullHQGiven_provideMostActiveCustomer&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.MainTest" />
+        <item itemvalue="Gradle.MainTest.whenHQGiven_provideMostActiveCustomer" />
+        <item itemvalue="Gradle.MainTest.whenBranchGiven_calculateMonthlyBranchDepositWithdrawalDifference" />
+        <item itemvalue="Gradle.MainTest.whenNullBranchGiven_provideHighestPaidTeller" />
+        <item itemvalue="Gradle.MainTest.whenNullHQGiven_provideMostActiveCustomer" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ec2100e1-1613-4f9f-85da-c67569bcefb5" name="Default Changelist" comment="" />
+      <created>1618328355598</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1618328355598</updated>
+      <workItem from="1618328361321" duration="12312000" />
+      <workItem from="1618349785387" duration="11549000" />
+      <workItem from="1618413360613" duration="11690000" />
+      <workItem from="1618455054049" duration="345000" />
+      <workItem from="1618538892381" duration="5644000" />
+    </task>
+    <task id="LOCAL-00001" summary="setup fp project">
+      <created>1618328645217</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1618328645217</updated>
+    </task>
+    <task id="LOCAL-00002" summary="setup fp project">
+      <created>1618328710302</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1618328710302</updated>
+    </task>
+    <task id="LOCAL-00003" summary="test commit">
+      <created>1618328770816</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1618328770816</updated>
+    </task>
+    <task id="LOCAL-00004" summary="admin class created">
+      <created>1618336148341</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1618336148341</updated>
+    </task>
+    <task id="LOCAL-00005" summary="teller class created">
+      <created>1618336154628</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1618336154628</updated>
+    </task>
+    <task id="LOCAL-00006" summary="admin with extends user">
+      <created>1618341846568</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1618341846568</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Main class added">
+      <created>1618341862603</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1618341862604</updated>
+    </task>
+    <task id="LOCAL-00008" summary="teller improved">
+      <created>1618341898635</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1618341898635</updated>
+    </task>
+    <task id="LOCAL-00009" summary="setup main">
+      <created>1618343692179</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1618343692179</updated>
+    </task>
+    <task id="LOCAL-00010" summary="admin utility class added">
+      <created>1618348762659</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1618348762659</updated>
+    </task>
+    <task id="LOCAL-00011" summary="main refactored">
+      <created>1618348817532</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1618348817532</updated>
+    </task>
+    <task id="LOCAL-00012" summary="minor changes">
+      <created>1618348850906</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1618348850906</updated>
+    </task>
+    <task id="LOCAL-00013" summary="admin fixed">
+      <created>1618350373029</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1618350373029</updated>
+    </task>
+    <task id="LOCAL-00014" summary="one function for admin">
+      <created>1618350403610</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1618350403610</updated>
+    </task>
+    <task id="LOCAL-00015" summary="main method fixed">
+      <created>1618350434371</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1618350434371</updated>
+    </task>
+    <task id="LOCAL-00016" summary="teller fixed">
+      <created>1618350444533</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1618350444533</updated>
+    </task>
+    <task id="LOCAL-00017" summary="other files">
+      <created>1618350478250</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1618350478250</updated>
+    </task>
+    <task id="LOCAL-00018" summary="teller to string added and getters and setters">
+      <created>1618350794587</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1618350794587</updated>
+    </task>
+    <task id="LOCAL-00019" summary="admin to string added and getters and setters">
+      <created>1618350821700</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1618350821700</updated>
+    </task>
+    <task id="LOCAL-00020" summary="refactoring changes">
+      <created>1618350859796</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1618350859796</updated>
+    </task>
+    <task id="LOCAL-00021" summary="refactoring changes">
+      <created>1618366118931</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1618366118931</updated>
+    </task>
+    <task id="LOCAL-00022" summary="admin utils refined">
+      <created>1618369841806</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1618369841807</updated>
+    </task>
+    <task id="LOCAL-00023" summary="customer class with overridden hashcode and equals">
+      <created>1618369938411</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1618369938411</updated>
+    </task>
+    <task id="LOCAL-00024" summary="minor changes to main">
+      <created>1618369992868</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1618369992868</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Main test file setup with partial tests done">
+      <created>1618370017787</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1618370017787</updated>
+    </task>
+    <task id="LOCAL-00026" summary="other files">
+      <created>1618370033173</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1618370033174</updated>
+    </task>
+    <task id="LOCAL-00027" summary="transaction list in account initialized">
+      <created>1618417804479</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1618417804479</updated>
+    </task>
+    <task id="LOCAL-00028" summary="more queries in admin utils">
+      <created>1618417827149</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1618417827149</updated>
+    </task>
+    <task id="LOCAL-00029" summary="main class improved">
+      <created>1618417845671</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1618417845671</updated>
+    </task>
+    <task id="LOCAL-00030" summary="additional test cases">
+      <created>1618417861058</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1618417861058</updated>
+    </task>
+    <task id="LOCAL-00031" summary="equals and hashcode overridden in teller">
+      <created>1618417890442</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1618417890442</updated>
+    </task>
+    <task id="LOCAL-00032" summary="admin utils refactored">
+      <created>1618418408263</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1618418408263</updated>
+    </task>
+    <task id="LOCAL-00033" summary="test file refactoring done">
+      <created>1618418428734</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1618418428734</updated>
+    </task>
+    <task id="LOCAL-00034" summary="other gradle files">
+      <created>1618418445957</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1618418445957</updated>
+    </task>
+    <task id="LOCAL-00035" summary="mpp iml issues resolved">
+      <created>1618425248154</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1618425248154</updated>
+    </task>
+    <task id="LOCAL-00036" summary="reverted admin utils">
+      <created>1618434820601</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1618434820601</updated>
+    </task>
+    <task id="LOCAL-00037" summary="admin class cleanup">
+      <created>1618437624574</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1618437624574</updated>
+    </task>
+    <task id="LOCAL-00038" summary="moved admin test services out of main">
+      <created>1618437670106</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1618437670106</updated>
+    </task>
+    <task id="LOCAL-00039" summary="admin utils improved">
+      <created>1618437701701</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1618437701701</updated>
+    </task>
+    <task id="LOCAL-00040" summary="main improved">
+      <created>1618437718370</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1618437718370</updated>
+    </task>
+    <task id="LOCAL-00041" summary="main test heavily refactored">
+      <created>1618437734464</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1618437734464</updated>
+    </task>
+    <task id="LOCAL-00042" summary="renamed monthly difference class">
+      <created>1618438089083</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1618438089083</updated>
+    </task>
+    <task id="LOCAL-00043" summary="admin utils refactored and common functions moved to common utils">
+      <created>1618541332769</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1618541332769</updated>
+    </task>
+    <task id="LOCAL-00044" summary="new common utils class created">
+      <created>1618541356600</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1618541356600</updated>
+    </task>
+    <task id="LOCAL-00045" summary="additional admin tests">
+      <created>1618541377281</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1618541377281</updated>
+    </task>
+    <task id="LOCAL-00046" summary="additional tests">
+      <created>1618544839793</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1618544839793</updated>
+    </task>
+    <task id="LOCAL-00047" summary="new data population">
+      <created>1618544861749</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1618544861749</updated>
+    </task>
+    <task id="LOCAL-00048" summary="monthly function issues resolved">
+      <created>1618544999316</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1618544999316</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="minor changes to main" />
+    <MESSAGE value="Main test file setup with partial tests done" />
+    <MESSAGE value="other files" />
+    <MESSAGE value="transaction list in account initialized" />
+    <MESSAGE value="more queries in admin utils" />
+    <MESSAGE value="main class improved" />
+    <MESSAGE value="additional test cases" />
+    <MESSAGE value="equals and hashcode overridden in teller" />
+    <MESSAGE value="admin utils refactored" />
+    <MESSAGE value="test file refactoring done" />
+    <MESSAGE value="other gradle files" />
+    <MESSAGE value="mpp iml issues resolved" />
+    <MESSAGE value="reverted admin utils" />
+    <MESSAGE value="admin class cleanup" />
+    <MESSAGE value="moved admin test services out of main" />
+    <MESSAGE value="admin utils improved" />
+    <MESSAGE value="main improved" />
+    <MESSAGE value="main test heavily refactored" />
+    <MESSAGE value="renamed monthly difference class" />
+    <MESSAGE value="admin utils refactored and common functions moved to common utils" />
+    <MESSAGE value="new common utils class created" />
+    <MESSAGE value="additional admin tests" />
+    <MESSAGE value="additional tests" />
+    <MESSAGE value="new data population" />
+    <MESSAGE value="monthly function issues resolved" />
+    <option name="LAST_COMMIT_MESSAGE" value="monthly function issues resolved" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/utility/AdminUtils.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/mpp_fp$MainTest_whenHQGiven_provideMostActiveCustomer.ic" NAME="MainTest.whenHQGiven_provideMostActiveCustomer Coverage Results" MODIFIED="1618369578819" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/mpp_fp$MainTest.ic" NAME="MainTest Coverage Results" MODIFIED="1618371635555" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+</project>
