@@ -35,7 +35,7 @@ public abstract class AdminUtils {
 
     public static TriFunction<Branch, Integer, Integer, Double> MonthlyBranchDepositWithdrawalDifference = (branch, year, month) ->
             DoubleStream.of(AdminUtils.deposit.apply(branch, year, month), AdminUtils.withdrawal.apply(branch, year, month))
-                .reduce((a1, a2) -> a2 - a1).orElse(0.0);
+                .reduce((a1, a2) -> a1 - a2).orElse(0.0);
 
 
     public static TriFunction<Branch, Integer, Integer, Double> withdrawal = (branch, year, month) ->
