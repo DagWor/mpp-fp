@@ -23,16 +23,16 @@ public class MainTest {
     @Test
     public void whenNullHQGiven_provideMostActiveCustomer() {
 
-        List<Customer> expected =new ArrayList<>();
+        List<Customer> expected = new ArrayList<>();
         List<Customer> actual = AdminUtils.mostActiveCustomers.apply(null, 1);
         assertEquals(expected, actual);
     }
 
     @Test
-    public void whenHQGivenWithNullBranch_provideMostActiveCustomer() {
+    public void whenHQGivenWithNegativeLimit_provideMostActiveCustomer() {
 
-        List<Customer> expected =new ArrayList<>();
-        List<Customer> actual = AdminUtils.mostActiveCustomers.apply(null, 1);
+        List<Customer> expected = new ArrayList<>();
+        List<Customer> actual = AdminUtils.mostActiveCustomers.apply((HQ)AdminServices.prepareData().get(0), -1);
         assertEquals(expected, actual);
     }
 
@@ -42,6 +42,14 @@ public class MainTest {
 
         List<Teller> expected = Collections.singletonList(AdminServices.expectedTeller_whenBranchGiven_provideHighestPaidTeller());
         List<Teller> actual = AdminUtils.highestPaidTellers.apply((Branch) AdminServices.prepareData().get(1), 1);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void whenNullBranchGiven_provideHighestPaidTeller() {
+
+        List<Teller> expected = new ArrayList<>();
+        List<Teller> actual = AdminUtils.highestPaidTellers.apply(null, 1);
         assertEquals(expected, actual);
     }
 
