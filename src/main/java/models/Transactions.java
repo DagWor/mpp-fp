@@ -1,6 +1,7 @@
 package models;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Transactions {
 
@@ -85,5 +86,16 @@ public class Transactions {
                 ",From Account:" + getFromAccount() + " ,To Account: " + getToAccount();
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Transactions that = (Transactions) o;
+        return fromAccount == that.fromAccount && toAccount == that.toAccount && Double.compare(that.amount, amount) == 0 && Objects.equals(transactionType, that.transactionType) && Objects.equals(date, that.date) && Objects.equals(teller, that.teller) && Objects.equals(account, that.account);
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(transactionType, fromAccount, toAccount, amount, date, teller, account);
+    }
 }
