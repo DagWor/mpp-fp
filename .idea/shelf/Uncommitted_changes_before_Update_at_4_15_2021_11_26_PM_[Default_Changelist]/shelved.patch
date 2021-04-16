@@ -1,0 +1,121 @@
+Index: src/main/java/models/Transactions.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package models;\r\n\r\nimport java.time.LocalDate;\r\n\r\npublic class Transactions {\r\n\r\n    private  String transactionType;\r\n    private  int fromAccount;\r\n    private int toAccount;\r\n    private double amount;\r\n    private LocalDate date;\r\n    private Teller teller;\r\n\r\n    public Transactions( String transactionType, int fromAccount, int toAccount, double amount, LocalDate date) {\r\n        this.transactionType = transactionType;\r\n        this.fromAccount = fromAccount;\r\n        this.toAccount = toAccount;\r\n        this.amount = amount;\r\n        this.date = date;\r\n    }\r\n\r\n    public Teller getTeller() {\r\n        return teller;\r\n    }\r\n\r\n\r\n    public String getTransactionType() {\r\n        return transactionType;\r\n    }\r\n\r\n    public int getFromAccount() {\r\n        return fromAccount;\r\n    }\r\n\r\n    public int getToAccount() {\r\n        return toAccount;\r\n    }\r\n\r\n\r\n    public double getAmount() {\r\n        return amount;\r\n    }\r\n\r\n    public LocalDate getDate() {\r\n        return date;\r\n    }\r\n\r\n\r\n\r\n    public void setTeller(Teller teller) {\r\n        this.teller = teller;\r\n    }\r\n\r\n    public void setTransactionType(String transactionType) {\r\n        this.transactionType = transactionType;\r\n    }\r\n\r\n    public void setFromAccount(int fromAccount) {\r\n        this.fromAccount = fromAccount;\r\n    }\r\n\r\n    public void setToAccount(int toAccount) {\r\n        this.toAccount = toAccount;\r\n    }\r\n\r\n    public void setAmount(double amount) {\r\n        this.amount = amount;\r\n    }\r\n\r\n    public void setDate(LocalDate date) {\r\n        this.date = date;\r\n    }\r\n\r\n    @Override\r\n    public String toString() {\r\n        return \"Transaction Info: \" + \"Transaction Type: \" + transactionType + \", amount: \" + getAmount() + \", Amount:\" + getAmount() +\r\n                \",From Account:\" + getFromAccount() + \" ,To Account: \" + getToAccount();\r\n    }\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/models/Transactions.java b/src/main/java/models/Transactions.java
+--- a/src/main/java/models/Transactions.java	(revision 5976749a48bc73b6fa190be01d8fada01874ca45)
++++ b/src/main/java/models/Transactions.java	(date 1618544758277)
+@@ -10,6 +10,7 @@
+     private double amount;
+     private LocalDate date;
+     private Teller teller;
++    private Account account;
+ 
+     public Transactions( String transactionType, int fromAccount, int toAccount, double amount, LocalDate date) {
+         this.transactionType = transactionType;
+@@ -23,6 +24,9 @@
+         return teller;
+     }
+ 
++    public Account getAccount() {
++        return account;
++    }
+ 
+     public String getTransactionType() {
+         return transactionType;
+@@ -71,6 +75,10 @@
+         this.date = date;
+     }
+ 
++    public void setAccount(Account account) {
++        this.account = account;
++    }
++
+     @Override
+     public String toString() {
+         return "Transaction Info: " + "Transaction Type: " + transactionType + ", amount: " + getAmount() + ", Amount:" + getAmount() +
+Index: src/main/java/utility/HQUtility.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package utility;\r\n\r\nimport models.*;\r\n\r\nimport java.util.List;\r\nimport java.util.function.BiFunction;\r\nimport java.util.function.Function;\r\nimport java.util.stream.Collectors;\r\nimport java.util.stream.Stream;\r\n\r\npublic abstract class HQUtility {\r\n    /*\r\n    Function that populates to k deposit for the given year\r\n    */\r\n    public static TriFunction<HQ,Integer,Integer, List<Transactions>> topKDeposit=(hq, year, k)->\r\n            HQUtility.lstOfTransaction.apply(hq).stream()\r\n                    .flatMap(account -> account.getTransactionList().stream())\r\n                    .filter(transactions -> transactions.getDate().getYear()==year && transactions.getTransactionType().equals(\"DEPOSIT\"))\r\n                    .sorted((t1,t2)->(int)(t2.getAmount() - t1.getAmount()))\r\n                    .limit(k)\r\n                    .collect(Collectors.toList());\r\n\r\n    /*\r\n    * Top K accounts\r\n    */\r\n    public static  BiFunction<HQ,Integer,List<Account>> topKAccounts = (hq, k)->\r\n            HQUtility.lstOfTransaction.apply(hq).stream()\r\n            .sorted((acc1,acc2)-> (int) (acc2.getCurrentBalance() - acc1.getCurrentBalance()))\r\n            .limit(k)\r\n            .collect(Collectors.toList());\r\n\r\n    public static Function<HQ,List<Account>> lstOfTransaction=(hq)->\r\n            Stream.of(hq)\r\n                    .flatMap(_hq->_hq.getBranch().stream())\r\n                    .flatMap(branch -> branch.getUsers().stream())\r\n                    .filter(user -> user instanceof Customer)\r\n                    .map(user -> (Customer)user)\r\n                    .flatMap(customer -> customer.getAccountList().stream())\r\n                    .collect(Collectors.toList());\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/utility/HQUtility.java b/src/main/java/utility/HQUtility.java
+--- a/src/main/java/utility/HQUtility.java	(revision 5976749a48bc73b6fa190be01d8fada01874ca45)
++++ b/src/main/java/utility/HQUtility.java	(date 1618547143065)
+@@ -2,6 +2,7 @@
+ 
+ import models.*;
+ 
++import java.time.Month;
+ import java.util.List;
+ import java.util.function.BiFunction;
+ import java.util.function.Function;
+@@ -23,6 +24,8 @@
+     /*
+     * Top K accounts
+     */
++
++
+     public static  BiFunction<HQ,Integer,List<Account>> topKAccounts = (hq, k)->
+             HQUtility.lstOfTransaction.apply(hq).stream()
+             .sorted((acc1,acc2)-> (int) (acc2.getCurrentBalance() - acc1.getCurrentBalance()))
+@@ -37,4 +40,54 @@
+                     .map(user -> (Customer)user)
+                     .flatMap(customer -> customer.getAccountList().stream())
+                     .collect(Collectors.toList());
++
++
++    //eden's
++    //top withdrawal
++
++    public static TriFunction<HQ,Integer,Integer, List<Transactions>> topKWithdrawal=(hq, year, k)->
++            HQUtility.lstOfTransaction.apply(hq).stream()
++                    .flatMap(account -> account.getTransactionList().stream())
++                    .filter(transactions -> transactions.getDate().getYear()==year && transactions.getTransactionType().equals("WITHDRAWAL"))
++                    .sorted((t1,t2)->(int)(t2.getAmount() - t1.getAmount()))
++                    .limit(1)
++                    .collect(Collectors.toList());
++
++    //The lowest transfer of the year
++
++    public static BiFunction<HQ,Integer,Transactions> lowestTransferOfTheYear=(hq, year)->
++            HQUtility.lstOfTransaction.apply(hq).stream()
++                    .flatMap(account -> account.getTransactionList().stream())
++                    .filter(transactions -> transactions.getDate().getYear()==year && transactions.getTransactionType().equals("TRANSFER"))
++                    .sorted((t1,t2)->(int)(t1.getAmount() - t2.getAmount())) //sorting in ascending
++                    .findFirst()
++                    .orElse(null);
++
++
++    //customer of the month based on deposit
++
++
++//    public static BiFunction<HQ, Month,Customer> customerOfTheMonth=(hq, month)->
++//            HQUtility.lstOfTransaction.apply(hq).stream()
++//                    .flatMap(account -> account.getTransactionList().stream())
++//                    .filter(transactions -> transactions.getDate().getMonth()==month && transactions.getTransactionType().equals("DEPOSIT"))
++//                    .sorted((t1,t2)->(int)(t2.getAmount() - t1.getAmount()))
++//                    .limit(1)
++//                    .map(transactions -> transactions.getToAccount())
++//                    .map(account->account.getCustomer())
++//                    .orElse(null);
++
++// the most active branch
++
++    //
++    public static BiFunction<HQ, Month,String> maximumNumberOfTranscationsInAMonth=(hq, month)->
++            HQUtility.lstOfTransaction.apply(hq).stream()
++                    .flatMap(account -> account.getTransactionList().stream() )
++                    .filter(transactions -> transactions.getDate().getMonth()==month)
++                    .collect(Collectors.groupingBy(t->t.getDate().getDayOfWeek())).entrySet().stream()
++                    .sorted((t1,t2)->(int)(t2.getValue().size()-(t1.getValue().size())))
++                    .map(t->t.getKey()+ " "+ t.getValue().size())
++                    .limit(1).findFirst().get();
++
++
+ }
