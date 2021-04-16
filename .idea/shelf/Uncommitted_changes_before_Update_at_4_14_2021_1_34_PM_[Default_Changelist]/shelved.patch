@@ -1,0 +1,43 @@
+Index: .idea/mpp-fp.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<<<<<<< HEAD\r\n<module external.linked.project.id=\"mpp-fp\" external.linked.project.path=\"$MODULE_DIR$\" external.root.project.path=\"$MODULE_DIR$\" external.system.id=\"GRADLE\" external.system.module.group=\"org.example\" external.system.module.version=\"1.0-SNAPSHOT\" type=\"JAVA_MODULE\" version=\"4\">\r\n=======\r\n<module external.linked.project.id=\"mpp-fp:main\" external.linked.project.path=\"$MODULE_DIR$\" external.root.project.path=\"$MODULE_DIR$\" external.system.id=\"GRADLE\" external.system.module.group=\"org.example\" external.system.module.version=\"1.0-SNAPSHOT\" type=\"JAVA_MODULE\" version=\"4\">\r\n>>>>>>> c3090d5c2caddfe9655bc1d86c9299dd99ab15c1\r\n  <component name=\"NewModuleRootManager\" inherit-compiler-output=\"true\">\r\n    <exclude-output />\r\n    <content url=\"file://$MODULE_DIR$\">\r\n      <excludeFolder url=\"file://$MODULE_DIR$/.gradle\" />\r\n      <excludeFolder url=\"file://$MODULE_DIR$/build\" />\r\n    </content>\r\n    <orderEntry type=\"inheritedJdk\" />\r\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\r\n  </component>\r\n</module>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/mpp-fp.iml b/.idea/mpp-fp.iml
+--- a/.idea/mpp-fp.iml	(revision c42ff9185216eb90468cfeadc1ecce0b30469c5f)
++++ b/.idea/mpp-fp.iml	(date 1618425145950)
+@@ -1,9 +1,5 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+-<<<<<<< HEAD
+-<module external.linked.project.id="mpp-fp" external.linked.project.path="$MODULE_DIR$" external.root.project.path="$MODULE_DIR$" external.system.id="GRADLE" external.system.module.group="org.example" external.system.module.version="1.0-SNAPSHOT" type="JAVA_MODULE" version="4">
+-=======
+ <module external.linked.project.id="mpp-fp:main" external.linked.project.path="$MODULE_DIR$" external.root.project.path="$MODULE_DIR$" external.system.id="GRADLE" external.system.module.group="org.example" external.system.module.version="1.0-SNAPSHOT" type="JAVA_MODULE" version="4">
+->>>>>>> c3090d5c2caddfe9655bc1d86c9299dd99ab15c1
+   <component name="NewModuleRootManager" inherit-compiler-output="true">
+     <exclude-output />
+     <content url="file://$MODULE_DIR$">
+Index: src/main/java/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import models.*;\r\nimport utility.AdminUtils;\r\n\r\nimport java.time.LocalDate;\r\nimport java.util.Arrays;\r\nimport java.util.*;\r\n\r\npublic class Main {\r\n    public static void main(String[] args) {\r\n        Address address = new Address(\"1000\", \"Fairfield\", 52556, 10231, \"IA\", \"USA\");\r\n        HQ hq = new HQ(\r\n                \"Don't Trust Bank\",\r\n                new Date(),\r\n                address);\r\n\r\n        // BRANCH 1\r\n        Branch branch = new Branch(\"First\", new Date(), address);\r\n\r\n        User admin = new Admin(1000, \"admin\", \"xyz@gmail.com\", \"John\", \"Doe\", address);\r\n        User teller = new Teller(1000, \"teller\", \"teller@gmail.com\", \"Alice\", \"Doe\", address);\r\n        User customer = new Customer(\"customer\", \"customer@gmail.com\", \"Susan\", \"Doe\", address);\r\n\r\n        branch.setUsers(Arrays.asList(admin, customer, teller));\r\n\r\n        Account account = new SavingAccount(123, 100, 5.5);\r\n        Transactions transactions = new Transactions(\"transfer\", 123, 321, 30.0, LocalDate.of(2021, 5, 2));\r\n        Transactions transactions1 = new Transactions(\"deposit\", 0, 123, 30.0, LocalDate.of(2021, 5, 2));\r\n\r\n        Account account1 = new CheckingAccount(321, 2541.2, 7.5);\r\n        Customer customer2 = (Customer) customer;\r\n        account.setCustomer(customer2);\r\n        account1.setCustomer(customer2);\r\n        customer2.setAccountList(Arrays.asList(account, account1));\r\n\r\n\r\n        account.setTransactionList(Arrays.asList(transactions, transactions1));\r\n        account1.setTransactionList(Arrays.asList(transactions));\r\n\r\n\r\n\r\n\r\n        // Branch 2\r\n\r\n        Branch branch1 = new Branch(\"Second\", new Date(), address);\r\n\r\n        User admin1 = new Admin(1000, \"admin1\", \"xyz1@gmail.com\", \"Dave\", \"George\", address);\r\n        Customer customer1 = new Customer(\"customer1\", \"Lily\", \"Hugh\", \"customer1@gmail.com\", address);\r\n        Teller teller1 = new Teller(1000, \"teller1\", \"teller1@gmail.com\", \"Carl\", \"Junior\", address);\r\n\r\n        branch1.setUsers(Arrays.asList(admin1, customer1, teller1));\r\n\r\n\r\n\r\n        Account account2 = new SavingAccount(1234, 1500, 5.5);\r\n        Transactions transactions2 = new Transactions(\"transfer\", 1234, 321, 30.0, LocalDate.of(2021, 5, 2));\r\n        Transactions transactions3 = new Transactions(\"deposit\", 0, 123, 30.0, LocalDate.of(2021, 5, 2));\r\n\r\n        Account account3 = new CheckingAccount(321, 2541.2, 7.5);\r\n//        Customer customer3 = (Customer) customer1;\r\n        account3.setCustomer(customer1);\r\n        account2.setCustomer(customer1);\r\n        customer1.setAccountList(Arrays.asList(account3, account2));\r\n\r\n\r\n        account2.setTransactionList(Arrays.asList(transactions2, transactions3));\r\n        account3.setTransactionList(Arrays.asList(transactions3));\r\n\r\n\r\n        hq.setBranch(Arrays.asList(branch, branch1));\r\n\r\n//        List<Customer> c = AdminUtils.mostActiveCustomers.apply(hq, 1);\r\n//        System.out.println(c.toString());\r\n//        System.out.println(hq);\r\n\r\n\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/Main.java b/src/main/java/Main.java
+--- a/src/main/java/Main.java	(revision c42ff9185216eb90468cfeadc1ecce0b30469c5f)
++++ b/src/main/java/Main.java	(date 1618425185693)
+@@ -68,9 +68,9 @@
+ 
+         hq.setBranch(Arrays.asList(branch, branch1));
+ 
+-//        List<Customer> c = AdminUtils.mostActiveCustomers.apply(hq, 1);
+-//        System.out.println(c.toString());
+-//        System.out.println(hq);
++        List<Customer> c = AdminUtils.mostActiveCustomers.apply(hq, 1);
++        System.out.println(c.toString());
++        System.out.println(hq);
+ 
+ 
+     }
