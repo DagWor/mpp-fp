@@ -126,4 +126,10 @@ public class AdminServices {
     public static Double expectedRevenue_whenBranchGiven_calculateBranchRevenue(){
         return 320.0D;
     }
+    public static Double expectedWithdrawal_whenBranchGiven_totalWithdrawal(){
+        return 210.0D;
+    }
+    public static Double expectedDeposit_whenBranchGiven_totalWithdrawal(){
+        return 530.0D;
+    }
 }
