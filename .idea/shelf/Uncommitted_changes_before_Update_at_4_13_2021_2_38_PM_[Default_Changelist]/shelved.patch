@@ -1,0 +1,26 @@
+Index: src/main/java/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import models.Address;\r\nimport models.Branch;\r\nimport models.HQ;\r\n\r\nimport java.util.Date;\r\n\r\npublic class Main {\r\n    public static void main(String[] args) {\r\n        HQ hq = new HQ(\r\n                \"Don't Trust Bank\",\r\n                new Date(),\r\n                new Address(\"1000\", \"Fairfield\", 52556, 10231, \"IA\", \"USA\"));\r\n\r\n//        Branch branch = new Branch()\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/Main.java b/src/main/java/Main.java
+--- a/src/main/java/Main.java	(revision 124dc609f262d25b0c172e14b782ea58bb42cee3)
++++ b/src/main/java/Main.java	(date 1618342598070)
+@@ -6,11 +6,12 @@
+ 
+ public class Main {
+     public static void main(String[] args) {
++        Address address = new Address("1000", "Fairfield", 52556, 10231, "IA", "USA");
+         HQ hq = new HQ(
+                 "Don't Trust Bank",
+                 new Date(),
+-                new Address("1000", "Fairfield", 52556, 10231, "IA", "USA"));
++                address);
+ 
+-//        Branch branch = new Branch()
+-    }
++//        Branch branch = new Branch("First", new Date(), address, )
++    } 
+ }

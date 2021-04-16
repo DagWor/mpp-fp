@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="MainTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2021-04-16T04:50:11" hostname="DESKTOP-RNU6IOU" time="0.124">
+  <properties/>
+  <testcase name="whenBranchGiven_provideHighestPaidTeller()" classname="MainTest" time="0.084"/>
+  <testcase name="whenBranchGiven_calculateMonthlyBranchDepositWithdrawalDifference()" classname="MainTest" time="0.015"/>
+  <testcase name="whenNullHQGiven_provideMostActiveCustomer()" classname="MainTest" time="0.004"/>
+  <testcase name="whenHQGiven_provideMostActiveCustomer()" classname="MainTest" time="0.003"/>
+  <testcase name="whenHQGivenWithNegativeLimit_provideMostActiveCustomer()" classname="MainTest" time="0.002"/>
+  <testcase name="whenNullBranchGiven_calculateMonthlyBranchDepositWithdrawalDifference()" classname="MainTest" time="0.003"/>
+  <testcase name="whenNullBranchGiven_provideHighestPaidTeller()" classname="MainTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
