@@ -2,6 +2,7 @@ package models;
 
 import utility.HQUtility;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -10,10 +11,10 @@ public class HQ {
 
     private String bankName;
     private List<Branch> branch;
-    private Date establishedDate;
+    private LocalDate establishedDate;
     private Address address;
 
-    public HQ(String bankName, Date establishedDate, Address address) {
+    public HQ(String bankName, LocalDate establishedDate, Address address) {
         this.bankName = bankName;
         this.establishedDate = establishedDate;
         this.address = address;
@@ -36,11 +37,11 @@ public class HQ {
         this.branch = branch;
     }
 
-    public Date getEstablishedDate() {
+    public LocalDate getEstablishedDate() {
         return establishedDate;
     }
 
-    public void setEstablishedDate(Date establishedDate) {
+    public void setEstablishedDate(LocalDate establishedDate) {
         this.establishedDate = establishedDate;
     }
 
@@ -52,49 +53,21 @@ public class HQ {
         this.address = address;
     }
 
-    public void createBranch(){
-        //implementation
-    }
-    public void addBranch(Branch _branch){
-        branch.add(_branch);
-    }
-    public List<Branch> viewBranch(){
-        //to be implemented
-        return null;
+    //    The top k deposit of the given year
+//    Hint K is the a number that select top rank numbers
+    public static List<String> theTopKDeposit(HQ hq, int year, int k) {
+        return HQUtility.topKDeposit.apply(hq, year, k);
     }
 
-    //The top k deposit of the given year
-    public static List<Transactions> theHighestDepositOfTheMonth(HQ hq, int year, int k){
-        return HQUtility.topKDeposit.apply(hq,2020,5);
-    }
-//    Top k accounts
-    public static List<Account> theTopKAccounts(HQ hq, int k){
-        return HQUtility.topKAccounts.apply(hq,k);
+    //    Top k accounts by account balance
+    public static List<Account> theTopKAccounts(HQ hq, int k) {
+        return HQUtility.topKAccounts.apply(hq, k);
     }
 
-    //Find the highest withdraw account for a given month
-    public static double theHighestWithdrawOfTheMonth(int month){
-        //to be implemented
-        return 0.0;
+    //    Top k peek withdraw month (s) of the giver year
+    public static List<String> thePeekWithdrawtopK(HQ hq, int year, int k) {
+        return HQUtility.thePeekMonthWithdrawTopK.apply(hq, year,k);
     }
-
-    //Average Top k withdraw customer city within a given year
-    public static List<Branch> averageTopKWithdrawAddress(int year){
-        //to be implemented
-        return null;
-    }
-
-    //Top k branches by number of customers
-    public static List<Branch> topKBranches(){
-        //to be implemented
-        return null;
-    }
-
-    //Top k branches by number of customers
-    public static List<Branch> topKBranches(HQ hq){
-        return  null;
-    }
-
     @Override
     public String toString() {
         return "HQ{" +

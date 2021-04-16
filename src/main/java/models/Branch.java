@@ -1,16 +1,17 @@
 package models;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 public class Branch {
     private String branchName;
-    private Date openedDate;
+    private LocalDate openedDate;
     private Address address;
     private List<User> users;
 
-    public Branch(String branchName, Date openedDate, Address address) {
+    public Branch(String branchName, LocalDate openedDate, Address address) {
         this.branchName = branchName;
         this.openedDate = openedDate;
         this.address = address;
@@ -25,11 +26,11 @@ public class Branch {
         this.branchName = branchName;
     }
 
-    public Date getOpenedDate() {
+    public LocalDate getOpenedDate() {
         return openedDate;
     }
 
-    public void setOpenedDate(Date openedDate) {
+    public void setOpenedDate(LocalDate openedDate) {
         this.openedDate = openedDate;
     }
 

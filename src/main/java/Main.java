@@ -8,13 +8,14 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         Address address = new Address("1000", "Fairfield", 52556, 10231, "IA", "USA");
-        HQ hq = new HQ(
+        HQ hq;
+        hq = new HQ(
                 "Don't Trust Bank",
-                new Date(),
+                LocalDate.of(2021,01,01),
                 address);
 
         // BRANCH 1
-        Branch branch = new Branch("First", new Date(), address);
+        Branch branch = new Branch("First",  LocalDate.of(2021,01,01), address);
 
         User admin = new Admin(1000, "admin", "xyz@gmail.com", "John", "Doe", address);
         User teller = new Teller(1000, "teller", "teller@gmail.com", "Alice", "Doe", address);
@@ -43,7 +44,7 @@ public class Main {
 
         // Branch 2
 
-        Branch branch1 = new Branch("Second", new Date(), address);
+        Branch branch1 = new Branch("Second",  LocalDate.of(2021,01,01), address);
 
         User admin1 = new Admin(1000, "admin1", "xyz1@gmail.com", "Dave", "George", address);
         User customer1 = new Customer("customer1", "Lily", "Hugh", "customer1@gmail.com", address);
