@@ -10,6 +10,7 @@ public class Transactions {
     private double amount;
     private LocalDate date;
     private Teller teller;
+    private Account account;
 
     public Transactions( String transactionType, int fromAccount, int toAccount, double amount, LocalDate date) {
         this.transactionType = transactionType;
@@ -23,6 +24,9 @@ public class Transactions {
         return teller;
     }
 
+    public Account getAccount() {
+        return account;
+    }
 
     public String getTransactionType() {
         return transactionType;
@@ -69,6 +73,10 @@ public class Transactions {
 
     public void setDate(LocalDate date) {
         this.date = date;
+    }
+
+    public void setAccount(Account account) {
+        this.account = account;
     }
 
     @Override
