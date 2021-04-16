@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec2100e1-1613-4f9f-85da-c67569bcefb5" name="Default Changelist" comment="date changed to localdate">
-      <change beforePath="$PROJECT_DIR$/.gradle/6.8/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+    <list default="true" id="ec2100e1-1613-4f9f-85da-c67569bcefb5" name="Default Changelist" comment="mini changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/services/HQUtilityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/services/HQUtilityTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,13 +205,6 @@
       <workItem from="1618455054049" duration="345000" />
       <workItem from="1618538892381" duration="8255000" />
       <workItem from="1618538892381" duration="7947000" />
-    </task>
-    <task id="LOCAL-00003" summary="test commit">
-      <created>1618328770816</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1618328770816</updated>
     </task>
     <task id="LOCAL-00004" summary="admin class created">
       <created>1618336148341</created>
@@ -555,7 +542,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618546129375</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="mini changes">
+      <created>1618549211507</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1618549211507</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -574,7 +568,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="other files" />
     <MESSAGE value="transaction list in account initialized" />
     <MESSAGE value="more queries in admin utils" />
     <MESSAGE value="main class improved" />
@@ -599,7 +592,8 @@
     <MESSAGE value="monthly function issues resolved" />
     <MESSAGE value="workspace" />
     <MESSAGE value="date changed to localdate" />
-    <option name="LAST_COMMIT_MESSAGE" value="date changed to localdate" />
+    <MESSAGE value="mini changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="mini changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
