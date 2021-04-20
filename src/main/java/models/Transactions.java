@@ -5,11 +5,11 @@ import java.util.Objects;
 
 public class Transactions {
 
-    private  String transactionType;
-    private  int fromAccount;
-    private int toAccount;
-    private double amount;
-    private LocalDate date;
+    private final String transactionType;
+    private final int fromAccount;
+    private final int toAccount;
+    private final double amount;
+    private final LocalDate date;
     private Teller teller;
     private Account account;
 
@@ -19,10 +19,6 @@ public class Transactions {
         this.toAccount = toAccount;
         this.amount = amount;
         this.date = date;
-    }
-
-    public Teller getTeller() {
-        return teller;
     }
 
     public Account getAccount() {
@@ -54,26 +50,6 @@ public class Transactions {
 
     public void setTeller(Teller teller) {
         this.teller = teller;
-    }
-
-    public void setTransactionType(String transactionType) {
-        this.transactionType = transactionType;
-    }
-
-    public void setFromAccount(int fromAccount) {
-        this.fromAccount = fromAccount;
-    }
-
-    public void setToAccount(int toAccount) {
-        this.toAccount = toAccount;
-    }
-
-    public void setAmount(double amount) {
-        this.amount = amount;
-    }
-
-    public void setDate(LocalDate date) {
-        this.date = date;
     }
 
     public void setAccount(Account account) {

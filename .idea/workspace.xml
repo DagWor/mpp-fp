@@ -4,8 +4,47 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec2100e1-1613-4f9f-85da-c67569bcefb5" name="Default Changelist" comment="mini changes">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="ec2100e1-1613-4f9f-85da-c67569bcefb5" name="Default Changelist" comment="added utility class for customer">
+      <change afterPath="$PROJECT_DIR$/src/test/java/services/LoadAllData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.8/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.8/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.8/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.8/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.8/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.8/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/MainTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/MainTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/default-package.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/default-package.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-MainTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-MainTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileTestJava/source-classes-mapping.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Address.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/Branch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Branch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/CheckingAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/CheckingAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/HQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/HQ.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/SavingAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/SavingAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/Teller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Teller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/Transactions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Transactions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utility/CustomerFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utility/CustomerFunctions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utility/HQUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utility/HQUtility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utility/TriFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utility/TriFunction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/MainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MainTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/services/AdminServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/services/AdminServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/services/HQUtility2Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/services/HQUtilityTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/services/LoadData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/services/LoadData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/services/LoadData1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/services/LoadData1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +76,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/test/java/MainTest.java" root0="SKIP_INSPECTION" />
+  </component>
   <component name="ProjectId" id="1r7XyHc1AWvgIk0dWdgioXiDdjD" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -52,7 +94,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Assignments/mpp-fp" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/utility" />
     <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.1321004" />
     <property name="project.structure.side.proportion" value="0.31987077" />
@@ -61,10 +103,19 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\dagma\Videos\Education\Mpp\Project\Phase2\src\main\java\utility" />
+      <recent name="C:\Users\dagma\Videos\Education\Mpp\Project\Phase2\src\test\java\services" />
       <recent name="C:\Users\dagma\Videos\Education\Mpp\Project\Phase2" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.MainTest">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="mpp-fp.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -75,6 +126,48 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="CustomerFunctionTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;services.CustomerFunctionTest&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="HQUtility2Test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;services.HQUtility2Test&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
     </configuration>
     <configuration name="MainTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -97,75 +190,12 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="MainTest.whenBranchGiven_calculateMonthlyBranchDepositWithdrawalDifference" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Tests in 'mpp-fp.test'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;MainTest.whenBranchGiven_calculateMonthlyBranchDepositWithdrawalDifference&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="MainTest.whenHQGiven_provideMostActiveCustomer" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;MainTest.whenHQGiven_provideMostActiveCustomer&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="MainTest.whenNullBranchGiven_provideHighestPaidTeller" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;MainTest.whenNullBranchGiven_provideHighestPaidTeller&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="MainTest.whenNullHQGiven_provideMostActiveCustomer" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;MainTest.whenNullHQGiven_provideMostActiveCustomer&quot;" />
+        <option name="scriptParameters" value="--tests *" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -183,11 +213,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Gradle.Tests in 'mpp-fp.test'" />
         <item itemvalue="Gradle.MainTest" />
-        <item itemvalue="Gradle.MainTest.whenHQGiven_provideMostActiveCustomer" />
-        <item itemvalue="Gradle.MainTest.whenBranchGiven_calculateMonthlyBranchDepositWithdrawalDifference" />
-        <item itemvalue="Gradle.MainTest.whenNullBranchGiven_provideHighestPaidTeller" />
-        <item itemvalue="Gradle.MainTest.whenNullHQGiven_provideMostActiveCustomer" />
+        <item itemvalue="Gradle.CustomerFunctionTest" />
+        <item itemvalue="Gradle.HQUtility2Test" />
       </list>
     </recent_temporary>
   </component>
@@ -205,76 +235,8 @@
       <workItem from="1618455054049" duration="345000" />
       <workItem from="1618538892381" duration="8255000" />
       <workItem from="1618538892381" duration="7947000" />
-    </task>
-    <task id="LOCAL-00005" summary="teller class created">
-      <created>1618336154628</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1618336154628</updated>
-    </task>
-    <task id="LOCAL-00006" summary="admin with extends user">
-      <created>1618341846568</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1618341846568</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Main class added">
-      <created>1618341862603</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1618341862604</updated>
-    </task>
-    <task id="LOCAL-00008" summary="teller improved">
-      <created>1618341898635</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1618341898635</updated>
-    </task>
-    <task id="LOCAL-00009" summary="setup main">
-      <created>1618343692179</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1618343692179</updated>
-    </task>
-    <task id="LOCAL-00010" summary="admin utility class added">
-      <created>1618348762659</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1618348762659</updated>
-    </task>
-    <task id="LOCAL-00011" summary="main refactored">
-      <created>1618348817532</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1618348817532</updated>
-    </task>
-    <task id="LOCAL-00012" summary="minor changes">
-      <created>1618348850906</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1618348850906</updated>
-    </task>
-    <task id="LOCAL-00013" summary="admin fixed">
-      <created>1618350373029</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1618350373029</updated>
-    </task>
-    <task id="LOCAL-00014" summary="one function for admin">
-      <created>1618350403610</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1618350403610</updated>
+      <workItem from="1618579664468" duration="7286000" />
+      <workItem from="1618931048948" duration="1644000" />
     </task>
     <task id="LOCAL-00015" summary="main method fixed">
       <created>1618350434371</created>
@@ -549,7 +511,77 @@
       <option name="project" value="LOCAL" />
       <updated>1618550773767</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="git ignore updated">
+      <created>1618551030440</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1618551030440</updated>
+    </task>
+    <task id="LOCAL-00055" summary="admin util class refactored">
+      <created>1618594236723</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1618594236724</updated>
+    </task>
+    <task id="LOCAL-00056" summary="hq utility added">
+      <created>1618594257789</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1618594257789</updated>
+    </task>
+    <task id="LOCAL-00057" summary="hq utility test 2 included">
+      <created>1618594271270</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1618594271270</updated>
+    </task>
+    <task id="LOCAL-00058" summary="hq utility test included">
+      <created>1618594280481</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1618594280481</updated>
+    </task>
+    <task id="LOCAL-00059" summary="load data for hq utility 2">
+      <created>1618594301593</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1618594301593</updated>
+    </task>
+    <task id="LOCAL-00060" summary="load data for hq utility">
+      <created>1618594314439</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1618594314439</updated>
+    </task>
+    <task id="LOCAL-00061" summary="main test mixed">
+      <created>1618594340952</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1618594340952</updated>
+    </task>
+    <task id="LOCAL-00062" summary="transcations class includes equals and hashcode">
+      <created>1618594418853</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1618594418853</updated>
+    </task>
+    <task id="LOCAL-00063" summary="added utility class for customer">
+      <created>1618931151568</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1618931151569</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -568,16 +600,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="transaction list in account initialized" />
-    <MESSAGE value="more queries in admin utils" />
-    <MESSAGE value="main class improved" />
-    <MESSAGE value="additional test cases" />
-    <MESSAGE value="equals and hashcode overridden in teller" />
-    <MESSAGE value="admin utils refactored" />
-    <MESSAGE value="test file refactoring done" />
-    <MESSAGE value="other gradle files" />
-    <MESSAGE value="mpp iml issues resolved" />
-    <MESSAGE value="reverted admin utils" />
     <MESSAGE value="admin class cleanup" />
     <MESSAGE value="moved admin test services out of main" />
     <MESSAGE value="admin utils improved" />
@@ -593,20 +615,22 @@
     <MESSAGE value="workspace" />
     <MESSAGE value="date changed to localdate" />
     <MESSAGE value="mini changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="mini changes" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/utility/AdminUtils.java</url>
-          <line>41</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="git ignore updated" />
+    <MESSAGE value="admin util class refactored" />
+    <MESSAGE value="hq utility added" />
+    <MESSAGE value="hq utility test 2 included" />
+    <MESSAGE value="hq utility test included" />
+    <MESSAGE value="load data for hq utility 2" />
+    <MESSAGE value="load data for hq utility" />
+    <MESSAGE value="main test mixed" />
+    <MESSAGE value="transcations class includes equals and hashcode" />
+    <MESSAGE value="added utility class for customer" />
+    <option name="LAST_COMMIT_MESSAGE" value="added utility class for customer" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Phase2$HQUtility2Test.ic" NAME="HQUtility2Test Coverage Results" MODIFIED="1618591869853" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Phase2$MainTest.ic" NAME="MainTest Coverage Results" MODIFIED="1618594817199" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Phase2$Tests_in__mpp_fp_test_.ic" NAME="Tests in 'mpp-fp.test' Coverage Results" MODIFIED="1618597026413" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/mpp_fp$MainTest_whenHQGiven_provideMostActiveCustomer.ic" NAME="MainTest.whenHQGiven_provideMostActiveCustomer Coverage Results" MODIFIED="1618369578819" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/mpp_fp$MainTest.ic" NAME="MainTest Coverage Results" MODIFIED="1618371635555" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>

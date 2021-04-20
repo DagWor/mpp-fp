@@ -11,28 +11,27 @@ public class Main {
         HQ hq;
         hq = new HQ(
                 "Don't Trust Bank",
-                LocalDate.of(2021,01,01),
+                LocalDate.of(2021,1, 1),
                 address);
 
         // BRANCH 1
-        Branch branch = new Branch("First",  LocalDate.of(2021,01,01), address);
+        Branch branch = new Branch("First",  LocalDate.of(2021,1,1), address);
 
         User admin = new Admin(1000, "admin", "xyz@gmail.com", "John", "Doe", address);
-        User teller = new Teller(1000, "teller", "teller@gmail.com", "Alice", "Doe", address);
-        User customer = new Customer("customer", "customer@gmail.com", "Susan", "Doe", address);
+        Teller teller = new Teller(1000, "teller", "teller@gmail.com", "Alice", "Doe", address);
+        Customer customer = new Customer("customer", "customer@gmail.com", "Susan", "Doe", address);
 
 
         Account account = new SavingAccount(123, 100, 5.5);
         Transactions transactions = new Transactions("withdrawal", 123, 0, 160, LocalDate.of(2021, 5, 2));
-        transactions.setTeller((Teller)teller);
+        transactions.setTeller(teller);
         Transactions transactions1 = new Transactions("deposit", 0, 123, 30.0, LocalDate.of(2021, 5, 2));
-        transactions1.setTeller((Teller)teller);
+        transactions1.setTeller(teller);
 
         Account account1 = new CheckingAccount(321, 2541.2, 7.5);
-        Customer customer2 = (Customer) customer;
-        account.setCustomer(customer2);
-        account1.setCustomer(customer2);
-        customer2.setAccountList(Arrays.asList(account, account1));
+        account.setCustomer(customer);
+        account1.setCustomer(customer);
+        customer.setAccountList(Arrays.asList(account, account1));
 
 
         account.setTransactionList(Arrays.asList(transactions, transactions1));
@@ -44,11 +43,11 @@ public class Main {
 
         // Branch 2
 
-        Branch branch1 = new Branch("Second",  LocalDate.of(2021,01,01), address);
+        Branch branch1 = new Branch("Second",  LocalDate.of(2021,1,1), address);
 
         User admin1 = new Admin(1000, "admin1", "xyz1@gmail.com", "Dave", "George", address);
-        User customer1 = new Customer("customer1", "Lily", "Hugh", "customer1@gmail.com", address);
-        User teller1 = new Teller(1000, "teller1", "teller1@gmail.com", "Carl", "Junior", address);
+        Customer customer1 = new Customer("customer1", "Lily", "Hugh", "customer1@gmail.com", address);
+        Teller teller1 = new Teller(1000, "teller1", "teller1@gmail.com", "Carl", "Junior", address);
 
         branch1.setUsers(Arrays.asList(admin1, customer1, teller1));
 
@@ -56,15 +55,14 @@ public class Main {
 
         Account account2 = new SavingAccount(1234, 1500, 5.5);
         Transactions transactions2 = new Transactions("deposit", 1234, 321, 30.0, LocalDate.of(2021, 5, 2));
-        transactions2.setTeller((Teller)teller1);
+        transactions2.setTeller(teller1);
         Transactions transactions3 = new Transactions("withdrawal", 0, 123, 150, LocalDate.of(2021, 5, 2));
-        transactions3.setTeller((Teller)teller1);
+        transactions3.setTeller(teller1);
 
         Account account3 = new CheckingAccount(3212, 2541.2, 7.5);
-        Customer customer3 = (Customer) customer1;
-        account3.setCustomer(customer3);
-        account2.setCustomer(customer3);
-        customer3.setAccountList(Arrays.asList(account3, account2));
+        account3.setCustomer(customer1);
+        account2.setCustomer(customer1);
+        customer1.setAccountList(Arrays.asList(account3, account2));
 
 
         account2.setTransactionList(Arrays.asList(transactions2, transactions3));

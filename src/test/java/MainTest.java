@@ -1,10 +1,9 @@
 import models.*;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import services.AdminServices;
-import services.LoadData;
-import services.LoadData1;
+import services.*;
 import utility.AdminUtils;
+import utility.CustomerFunctions;
 import utility.HQUtility;
 import services.LoadData1;
 
@@ -12,7 +11,7 @@ import java.time.LocalDate;
 import java.time.Month;
 import java.util.*;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class MainTest {
 
@@ -116,34 +115,37 @@ public class MainTest {
     public static void setUp() {
         LoadData1.transactionLoader();
         LoadData.transactionLoader();
+        LoadAllData.testDataOne();
+        LoadAllData.transactionLoader();
+        LoadAllData.SetTeller();
     }
 
     @Test
     public void emptyPeekWithdrawMonthTest(){
         assertEquals(new ArrayList<>(), HQUtility.thePeekMonthWithdrawTopK.apply(new HQ("",
-                LocalDate.of(1900,01,01),new Address("","",
+                LocalDate.of(1900,1,1),new Address("","",
                 0,0,"","")),2021,5));
     }
 
     @Test
     public void thePeekMonthWithdrawTopKFunctionalityTest1(){
-        int year =2021;
-        int k=1; //Number
-        String str="Month: MAY, Total Withdraw: 4700.0";
+        int year = 2021;
+        int k = 1; //Number
+        String str = "Month: MAY, Total Withdraw: 4700.0";
         assertEquals(List.of(str),HQUtility.thePeekMonthWithdrawTopK.apply(LoadData1.hq,year,k));
     }
 
     @Test
     public void thePeekMonthWithdrawTopKFunctionalityTest2(){
-        int year =2021;
-        int k=2; //Number
+        int year = 2021;
+        int k = 2; //Number
         assertEquals(k,HQUtility.thePeekMonthWithdrawTopK.apply(LoadData1.hq,year,k).size());
     }
 
     @Test
     public void thePeekMonthWithdrawTopKFunctionalityTest3(){
-        int year =2022;
-        int k=2; //Number
+        int year = 2022;
+        int k = 2; //Number
         assertEquals(0,HQUtility.thePeekMonthWithdrawTopK.apply(LoadData1.hq,year,k).size());
     }
 
@@ -155,38 +157,33 @@ public class MainTest {
     @Test
     public void emptyDataTopKAccountFunctionalityTest(){
         assertEquals(new ArrayList<>(),HQUtility.topKDeposit.apply(new HQ("",
-                LocalDate.of(1900,01,01),new Address("","",
+                LocalDate.of(1900,1,1),new Address("","",
                 0,0,"","")),2021,5));
     }
 
     @Test
     public void theTopKAccountFunctionalityTest(){
-        int k=2; //Number
-        assertEquals(true,HQUtility.topKAccounts.apply(LoadData1.hq,k).contains(LoadData1.account));
+        int k = 2; //Number
+        assertTrue(HQUtility.topKAccounts.apply(LoadData1.hq, k).contains(LoadData1.account));
     }
-
-    /*@Test
-    public void theTopKAccountFunctionalityTest1(){
-        int k=0; //Number
-        List<Account> accountResult = HQUtility.topKAccounts.apply(LoadData.hq,k);
-        assertFalse(accountResult.contains(LoadData1.account));
-    }*/
 
     @Test
     public void theTopKAccountFunctionalityTest2(){
-        int k=2;
+        int k = 2;
         assertEquals(k,HQUtility.lstOfAccount.apply(LoadData1.hq).size());
     }
 
     @Test
     public void topKDepositTest(){
-        int k=2; int year=2021;
+        int k = 2;
+        int year = 2021;
         assertEquals(k,HQUtility.topKDeposit.apply(LoadData1.hq,year,k).size());
     }
 
     @Test
     public void topKDepositTest1(){
-        int k=2; int year=2021;
+        int k = 2;
+        int year = 2021;
         assertEquals(List.of("Account nbr: 321 Amount: 1500.0","Account nbr: 321 Amount: 1500.0"),
                 HQUtility.topKDeposit.apply(LoadData1.hq,year,k));
     }
@@ -196,43 +193,117 @@ public class MainTest {
 
 
     // EDEN
-    //maximumNumberOfTranscationsInAMonth
+    //maximumNumberOfTransactionsInAMonth
     @Test
-    public void _maximumNumberOfTranscationsInAMonth() {
-        String  actualResult = HQUtility.maximumNumberOfTranscationsInAMonth.apply(LoadData.hq, Month.APRIL );
-        assertEquals(false,actualResult.equals("FRIDAY 6"));
+    public void _maximumNumberOfTransactionsInAMonth() {
+        String  actualResult = HQUtility.maximumNumberOfTransactionsInAMonth.apply(LoadData.hq, Month.APRIL );
+        assertNotEquals("FRIDAY 6", actualResult);
     }
     //lowest transfer of the year
     @Test
-    public  void _lowestTransferoftheYear() {
-        Transactions input=new Transactions( "TRANSFER",  126, 128, 500.0, LocalDate.of(2021, 5, 3));
-        Transactions actualResult=HQUtility.lowestTransferOfTheYear.apply(LoadData.hq ,2021);
+    public  void _lowestTransferOfTheYear() {
+        Transactions input = new Transactions( "TRANSFER",  126, 128, 500.0, LocalDate.of(2021, 5, 3));
+        Transactions actualResult = HQUtility.lowestTransferOfTheYear.apply(LoadData.hq ,2021);
         assertEquals(input,actualResult);
     }
 
     //top withdrawal
     @Test
-    public  void  topkWithdrawalKthreeTest()
+    public void topKWithdrawalKThreeTest()
     {
-        List <Transactions> input=new ArrayList<>();
-        List<Transactions> actualResult=HQUtility.topKWithdrawal.apply(LoadData.hq,2021,3);
+        List<Transactions> actualResult = HQUtility.topKWithdrawal.apply(LoadData.hq,2021,3);
         assertEquals(3,actualResult.size());
     }
 
     @Test
-    public  void  topkWithdrawalkFourTest() {
-        List <Transactions> input=new ArrayList<>();
-        List<Transactions> actualResult=HQUtility.topKWithdrawal.apply(LoadData.hq,2021,4);
+    public  void  topKWithdrawalKFourTest() {
+        List<Transactions> actualResult = HQUtility.topKWithdrawal.apply(LoadData.hq,2021,4);
         assertEquals(4,actualResult.size());
     }
 
     @Test
-    public  void  topkWithdrawalyearTest() {
-        List <Transactions> input=new ArrayList<>();
-        List<Transactions> actualResult=HQUtility.topKWithdrawal.apply(LoadData.hq,2022,3);
+    public  void  topKWithdrawalYearTest() {
+        List<Transactions> actualResult = HQUtility.topKWithdrawal.apply(LoadData.hq,2022,3);
         assertEquals(0,actualResult.size());
     }
 
+
+
+    // MINTESINOT
+
+    @SuppressWarnings("SuspiciousMethodCalls")
+    @Test
+    public void listOfCustomerWithCityAndSalaryTwoTest(){
+        List<Customer> customers = CustomerFunctions.listOfCustomerWithCityAndSalary.apply(LoadAllData.hq,"Fairfield",1000f);
+        assertEquals(2,customers.size());
+        assertTrue(customers.contains(LoadAllData.customer));
+
+    }
+
+    @SuppressWarnings("SuspiciousMethodCalls")
+    @Test
+    public void listOfCustomerWithCityAndSalaryWithAMountTest(){
+        List<Customer> customers = CustomerFunctions.listOfCustomerWithCityAndSalary.apply(LoadAllData.hq,"Fairfield",25000f);
+        assertEquals(2,customers.size());
+        assertTrue(customers.contains(LoadAllData.customer));
+
+    }
+
+    @Test
+    public void listOfCustomerWithCityAndSalaryWithCityTest(){
+        List<Customer> customers = CustomerFunctions.listOfCustomerWithCityAndSalary.apply(LoadAllData.hq,"Boston",25000f);
+        assertEquals(0,customers.size());
+
+
+    }
+
+    @Test
+    public void listOfCustomerWithCityAndSalaryWithSpecificCityTest(){
+        List<Customer> customers = CustomerFunctions.listOfCustomerWithCityAndSalary.apply(LoadAllData.hq,"Seattle",25000f);
+        assertEquals(1,customers.size());
+
+
+    }
+
+    // test Customer List
+    @Test
+    public void listCustomerCorrect(){
+        List<String> customerList = CustomerFunctions.listCustomer.apply(LoadAllData.hq,2);
+        assertEquals(2,customerList.size());
+        assertTrue(customerList.contains("Fairfield 4"));
+    }
+    @Test
+    public void listCustomerWrongData(){
+        List<String> customerList = CustomerFunctions.listCustomer.apply(LoadAllData.hq,2);
+        assertFalse(customerList.contains("Fairfields 4"));
+    }
+
+    @Test
+    public void listCustomerWithLimit(){
+        List<String> customerList = CustomerFunctions.listCustomer.apply(LoadAllData.hq,1);
+        assertEquals(1,customerList.size());
+    }
+
+    @Test
+    public void listCustomerWithCustomerWithLimit(){
+        List<String> customerList = CustomerFunctions.listCustomer.apply(LoadAllData.hq,1);
+        assertEquals(1,customerList.size());
+    }
+
+
+
+    // test Worst city of customer
+    @Test
+    public void worstCityInterOfCustomerNumberTest(){
+        String actualList = CustomerFunctions.worstCityInterOfCustomerNumber.apply(LoadAllData.hq);
+        assertEquals("Seattle 1",actualList);
+    }
+
+    @Test
+    public void worstCityInterOfCustomerNumberDataTest(){
+        String actualList = CustomerFunctions.worstCityInterOfCustomerNumber.apply(LoadAllData.hq);
+        assertTrue(actualList.contains("Seattle 1"));
+    }
 
 
 }

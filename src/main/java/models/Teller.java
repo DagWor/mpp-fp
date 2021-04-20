@@ -55,22 +55,6 @@ public class Teller extends User {
         return salary;
     }
 
-    public void createSavingAccount(Customer customer, SavingAccount savingAccount){
-        // TODO - add account for customer
-//        customer.addAccount(savingAccount);
-    }
-
-
-    public double calcTotalDeposit() {
-//        to be implemented
-        return 0.0;
-    }
-
-    public void createCheckingAccount(Customer customer, SavingAccount savingAccount){
-        // TODO - add account for customer
-//        customer.addAccount(checkingAccount);
-    }
-
     @Override
     public String toString() {
         return "Teller {" +

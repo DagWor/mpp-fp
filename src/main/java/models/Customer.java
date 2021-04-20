@@ -64,11 +64,6 @@ public class Customer extends User {
     public void setAccountList(List<Account> accountList) {
         this.accountList = accountList;
     }
-    //   git
-
-    public  void fundTransfer(){
-
-    }
 
     @Override
     public String toString() {

@@ -5,7 +5,8 @@ import java.util.List;
 
 public  abstract class Account {
 
-    private  int accountNumber;
+    private final int accountNumber;
+    @SuppressWarnings("FieldMayBeFinal")
     private double currentBalance;
     private Customer customer;
     private List<Transactions> transactionList;
@@ -28,16 +29,8 @@ public  abstract class Account {
         return customer;
     }
 
-    public void setAccountNumber(int accountNumber) {
-        this.accountNumber = accountNumber;
-    }
-
     public void setCustomer(Customer customer) {
         this.customer = customer;
-    }
-
-    public void setCurrentBalance(double currentBalance) {
-        this.currentBalance = currentBalance;
     }
 
     public List<Transactions> getTransactionList() {
@@ -47,10 +40,6 @@ public  abstract class Account {
     public void setTransactionList(List<Transactions> transactionList) {
         this.transactionList = transactionList;
     }
-
-    //abstract methods
-
-    public abstract double getInterest();
 
     @Override
     public String toString() {

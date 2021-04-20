@@ -23,6 +23,7 @@ public abstract class HQUtility {
                     .flatMap(customer -> customer.getAccountList().stream())
                     .collect(Collectors.toList());
 
+    @SuppressWarnings("OptionalGetWithoutIsPresent")
     public static Function<HQ, List<Account>> lstOfAccount = (hq) ->
             Stream.of(hq)
                     .flatMap(_hq -> Optional.ofNullable(_hq.getBranch()).get().stream())
@@ -35,6 +36,7 @@ public abstract class HQUtility {
     /*
     Function that populates top k deposit for the given year
     */
+    @SuppressWarnings("OptionalGetWithoutIsPresent")
     public static TriFunction<HQ, Integer, Integer, List<String>> topKDeposit = (hq, year, k) ->
             Optional.ofNullable(HQUtility.lstOfAccount.apply(hq).stream()).get()
                     .flatMap(account -> account.getTransactionList().stream())
@@ -46,6 +48,7 @@ public abstract class HQUtility {
     /*
      * Top K accounts by current balance for the given year
      */
+    @SuppressWarnings("OptionalGetWithoutIsPresent")
     public static BiFunction<HQ, Integer, List<Account>> topKAccounts = (hq, k) ->
             Optional.ofNullable(HQUtility.lstOfAccount.apply(hq).stream()).get()
                     .sorted((acc1, acc2) -> (int) (acc2.getCurrentBalance() - acc1.getCurrentBalance()))
@@ -63,7 +66,7 @@ public abstract class HQUtility {
                     .filter(transaction -> transaction.getDate().getYear() == year &&
                             transaction.getTransactionType().equals("WITHDRAW"))
                     .collect(Collectors.groupingBy(transactions -> transactions.getDate().getMonth(),
-                            Collectors.summarizingDouble(tr -> tr.getAmount())))
+                            Collectors.summarizingDouble(Transactions::getAmount)))
                     .entrySet()
                     .stream()
                     .sorted((c1, c2) -> (int) (c2.getValue().getSum()) - (int) (c1.getValue().getSum()))
@@ -81,35 +84,22 @@ public abstract class HQUtility {
                     .sorted((t1,t2)->(int)(t2.getAmount() - t1.getAmount()))
                     .limit(k)
                     .collect(Collectors.toList());
+
     //The lowest transfer of the year
     public static BiFunction<HQ,Integer,Transactions> lowestTransferOfTheYear=(hq, year)->
+            //sorting in ascending
             HQUtility.lstOfTransaction.apply(hq).stream()
                     .flatMap(account -> account.getTransactionList().stream())
-                    .filter(transactions -> transactions.getDate().getYear()==year && transactions.getTransactionType().equals("TRANSFER"))
-                    .sorted((t1,t2)->(int)(t1.getAmount() - t2.getAmount())) //sorting in ascending
-                    .findFirst()
+                    .filter(transactions -> transactions.getDate().getYear() == year && transactions.getTransactionType().equals("TRANSFER")).min((t1, t2) -> (int) (t1.getAmount() - t2.getAmount()))
                     .orElse(null);
 
-    //customer of the month based on deposit
-
-    //    public static BiFunction<HQ, Month,Customer> customerOfTheMonth=(hq, month)->
-//            HQUtility.lstOfTransaction.apply(hq).stream()
-//                    .flatMap(account -> account.getTransactionList().stream())
-//                    .filter(transactions -> transactions.getDate().getMonth()==month && transactions.getTransactionType().equals("DEPOSIT"))
-//                    .sorted((t1,t2)->(int)(t2.getAmount() - t1.getAmount()))
-//                    .limit(1)
-//                    .map(transactions -> transactions.getToAccount())
-//                    .map(account->account.getCustomer())
-//                    .orElse(null);
-// the most active branch
-    //
-    public static BiFunction<HQ, Month,String> maximumNumberOfTranscationsInAMonth=(hq, month)->
+    public static BiFunction<HQ, Month,String> maximumNumberOfTransactionsInAMonth =(hq, month)->
             HQUtility.lstOfTransaction.apply(hq).stream()
                     .flatMap(account -> account.getTransactionList().stream() )
                     .filter(transactions -> transactions.getDate().getMonth()==month)
                     .collect(Collectors.groupingBy(t->t.getDate().getDayOfWeek())).entrySet().stream()
-                    .sorted((t1,t2)->(int)(t2.getValue().size()-(t1.getValue().size())))
+                    .sorted((t1,t2)-> t2.getValue().size()-(t1.getValue().size()))
                     .map(t->t.getKey()+ " "+ t.getValue().size())
-                    .limit(1).findFirst().get();
+                    .limit(1).findFirst().orElse("Nothing found");
 
 }

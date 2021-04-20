@@ -1,7 +1,8 @@
 package models;
 
 public class Admin extends User {
-    private final float salary;
+    @SuppressWarnings({"FieldCanBeLocal", "FieldMayBeFinal", "unused"})
+    private float salary;
 
     public Admin(float salary, String username, String email, String firstName, String lastName, Address address) {
         super(username, email, firstName, lastName, address);
@@ -56,8 +57,5 @@ public class Admin extends User {
                 "last name =" + getLastName() +
                 "email =" + getEmail() +
                 '}';
-    }
-    float getSalary() {
-        return salary;
     }
 }

@@ -16,9 +16,11 @@ public class LoadData1 {
     public static User teller1;
     public static User customer;
     public static User customer1;
+    @SuppressWarnings("unused")
     public static User customer2;
     public static Account account;
     public static Account account1;
+    @SuppressWarnings("unused")
     public static Account account2;
     public static Transactions transactions;
     public static Transactions transactions1;
@@ -37,10 +39,10 @@ public class LoadData1 {
     public static Transactions transactions14;
 
     public static void testDataOne(){
-        Address address = new Address("1000 N. 4th street","Fairfield",0101,0101,"IOWA","USA");
-        hq = new HQ("TrustBank", LocalDate.of(2000,01,01),address);
-        branch = new Branch("First", LocalDate.of(2005,01,01),address);
-        branch1 = new Branch("Second", LocalDate.of(2006,01,01), address);
+        Address address = new Address("1000 N. 4th street","Fairfield",101,101,"IOWA","USA");
+        hq = new HQ("TrustBank", LocalDate.of(2000,1,1),address);
+        branch = new Branch("First", LocalDate.of(2005,1,1),address);
+        branch1 = new Branch("Second", LocalDate.of(2006,1,1), address);
 
         admin = new Admin(10000, "admin", "xyz@gmail.com", "John", "Doe", address);
         teller = new Teller(10000, "teller", "teller@gmail.com", "Alice", "Doe", address);
@@ -58,9 +60,6 @@ public class LoadData1 {
         Customer _customer1 = (Customer)customer1;
 
         _customer.setAccount(account);
-        //_customer.setAccountList(List.of(account1));
-
-        // _customer1.setAccount(account);
         _customer1.setAccount(account1);
 
         account.setCustomer(_customer);
@@ -98,6 +97,7 @@ public class LoadData1 {
         account1.setTransactionList(Arrays.asList(transactions1,transactions3,transactions4,transactions6,transactions8,transactions10,transactions12,transactions14));
     }
 
+    @SuppressWarnings("unused")
     public static void SetTeller(){
         LoadData1.testDataOne();
 

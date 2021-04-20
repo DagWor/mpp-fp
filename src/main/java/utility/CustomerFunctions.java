@@ -1,9 +1,11 @@
 package utility;
 
+import models.Account;
 import models.Customer;
 import models.HQ;
 import models.User;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.function.BiFunction;
@@ -21,14 +23,14 @@ public class CustomerFunctions {
     //given:city and amount and return list of customer
     public static     TriFunction<HQ,String,Float, List<Customer>>  listOfCustomerWithCityAndSalary=
             (hq, city, balance) -> listOfUser.apply(hq).stream().
-                    filter(user->user.getAddress().getCity()==city).
+                    filter(user-> user.getAddress().getCity().equals(city)).
                     filter(user->user instanceof Customer ).
                     map(user->(Customer)user).
                     flatMap(customer->customer.getAccountList().stream()).
-                    collect(Collectors.groupingBy(account->account.getCustomer(),Collectors.summarizingDouble(account->account.getCurrentBalance())))
+                    collect(Collectors.groupingBy(Account::getCustomer,Collectors.summarizingDouble(Account::getCurrentBalance)))
                     .entrySet().stream().
                             filter(c -> c.getValue().getSum()>=balance).distinct().
-                            map(m->m.getKey()).collect(Collectors.toList());
+                            map(Map.Entry::getKey).collect(Collectors.toList());
 
 
     /*public static BiFunction<HQ,Integer,List<String>> listOfTopTeller=(hq, k)->
@@ -46,12 +48,12 @@ public class CustomerFunctions {
                     .collect(Collectors.toList());*/
 
 
-    public  static  Function<HQ,String> worrestCityInterOfCustomerNumber=(hq)->listOfUser.apply(hq).stream()
+    public  static  Function<HQ,String> worstCityInterOfCustomerNumber =(hq)->listOfUser.apply(hq).stream()
                    .filter(user->user instanceof Customer )
                    .collect(Collectors.groupingBy(user -> user.getAddress().getCity())).entrySet().stream()
-                   .sorted((c1,c2)->c1.getValue().size()-c2.getValue().size())
+                   .sorted(Comparator.comparingInt(c -> c.getValue().size()))
                    .map(entry->entry.getKey()+" "+entry.getValue().size())
-                   .findFirst().get();
+                   .findFirst().orElse("Nothing found");
 
 
 

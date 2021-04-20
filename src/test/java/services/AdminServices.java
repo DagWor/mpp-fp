@@ -5,7 +5,6 @@ import models.*;
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Date;
 import java.util.List;
 
 public class AdminServices {
@@ -95,7 +94,6 @@ public class AdminServices {
 
         Account account = new SavingAccount(123, 100, 5.5);
         Transactions transactions = new Transactions("transfer", 123, 321, 30.0, LocalDate.of(2021, 5, 2));
-        Transactions transactions1 = new Transactions("deposit", 0, 123, 30.0, LocalDate.of(2021, 5, 2));
 
         Account account3 = new CheckingAccount(321, 2541.2, 7.5);
         Account account2 = new SavingAccount(1234, 1500, 5.5);

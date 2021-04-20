@@ -4,6 +4,8 @@ models/Branch.java
  models.Branch
 models/Address.java
  models.Address
+utility/CustomerFunctions.java
+ utility.CustomerFunctions
 models/Transactions.java
  models.Transactions
 models/SavingAccount.java
